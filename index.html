@@ -1,0 +1,1062 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galaxy Eggbert: Speedy Blupi reborn in 3D</title>
+  <meta name="description" content="Galaxy Eggbert is a free, open-source 3D remake of the classic platformer Speedy Blupi (Speedy Eggbert). It has 78 worlds, every original gadget, a built-in 3D world editor, and you can play it in your browser.">
+  <meta name="theme-color" content="#070a1f">
+  <link rel="canonical" href="https://galaxyeggbert.com/">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Galaxy Eggbert">
+  <meta property="og:title" content="Galaxy Eggbert: Speedy Blupi reborn in 3D">
+  <meta property="og:description" content="A free, open-source 3D remake of Speedy Blupi with 78 worlds, every original gadget, a built-in 3D world editor and multiplayer for up to four players. Version 0.1.0 for Windows, Linux, Android and the web.">
+  <meta property="og:url" content="https://galaxyeggbert.com/">
+  <meta property="og:image" content="https://galaxyeggbert.com/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preload" href="assets/fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoGame",
+    "name": "Galaxy Eggbert",
+    "url": "https://galaxyeggbert.com/",
+    "image": "https://galaxyeggbert.com/assets/img/og-image.jpg",
+    "description": "A free, open-source 3D remake of the 1998 platformer Speedy Blupi (Speedy Eggbert).",
+    "genre": ["Platformer", "3D platformer", "Puzzle"],
+    "softwareVersion": "0.1.0",
+    "playMode": ["SinglePlayer", "MultiPlayer"],
+    "numberOfPlayers": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 4 },
+    "downloadUrl": "https://github.com/openeggbert/galaxy-eggbert/releases/tag/v0.1.0",
+    "gamePlatform": ["Web browser", "Linux", "Windows", "Android"],
+    "applicationCategory": "Game",
+    "operatingSystem": "Linux, Windows, Android, Web",
+    "license": "https://www.gnu.org/licenses/gpl-3.0.html",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "EUR" },
+    "isBasedOn": { "@type": "VideoGame", "name": "Speedy Blupi", "datePublished": "1998-09-13", "author": [{ "@type": "Person", "name": "Daniel Roux" }, { "@type": "Organization", "name": "EPSITEC SA" }] }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================== HEADER ============================== -->
+  <header class="site-header" id="top">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="Galaxy Eggbert, back to top">
+        <img src="assets/img/blupi-icon.png" alt="" width="36" height="36">
+        <span class="brand-name">Galaxy <b>Eggbert</b></span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Menu</span>
+        <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <a href="#fans">Story</a>
+        <a href="#features">Features</a>
+        <a href="#worlds">Worlds</a>
+        <a href="#screenshots">Screenshots</a>
+        <a href="#editor">Editor</a>
+        <a href="#multiplayer">Multiplayer</a>
+        <a href="#download">Download</a>
+        <a href="#faq">FAQ</a>
+        <a class="nav-gh" href="https://github.com/openeggbert/galaxy-eggbert" rel="noopener" aria-label="Source code on GitHub">
+          <svg viewBox="0 0 16 16" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          <span class="nav-gh-label">GitHub</span>
+        </a>
+        <a class="btn btn-primary btn-sm nav-play" href="play/">Play now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================== HERO ============================== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-media" aria-hidden="true">
+        <img src="assets/shots/hero.webp" alt="" width="1600" height="960" fetchpriority="high">
+      </div>
+      <div class="wrap hero-inner">
+        <p class="eyebrow hero-eyebrow">Free · Open source · Made by fans, for fans</p>
+        <p class="hero-news"><a href="#multiplayer"><span class="pill pill-ok">New</span> Version 0.1.0 is out, with multiplayer for up to four players</a></p>
+        <h1 class="hero-logo" id="hero-title">
+          <img src="assets/img/logo.webp" srcset="assets/img/logo.webp 1x, assets/img/logo@2x.webp 2x" alt="Galaxy Eggbert" width="490" height="90">
+        </h1>
+        <p class="hero-lead">
+          <strong>Speedy Blupi, reborn in true 3D.</strong>
+          Run, jump, swim and fly through 78 voxel worlds. Ride the helicopter, push
+          the crates and dodge the mines, all by the original game's rules. Then call your
+          friends and play Speedy Blupi&nbsp;II's network game together.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary btn-lg" href="play/">
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.53.85l10.2-6.5a1 1 0 0 0 0-1.7L9.53 4.65A1 1 0 0 0 8 5.5z"/></svg>
+            Play in your browser
+          </a>
+          <a class="btn btn-ghost btn-lg" href="#download">
+            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14"/></svg>
+            Download
+          </a>
+        </div>
+        <p class="hero-platforms">Version 0.1.0 for Windows, Linux, Android and the web · macOS and iPhone on the way</p>
+      </div>
+      <div class="wrap">
+        <ul class="hero-stats" aria-label="The game in numbers">
+          <li><b>78</b><span>worlds</span></li>
+          <li><b>64</b><span>missions</span></li>
+          <li><b>4</b><span>players together</span></li>
+          <li><b>12</b><span>themed lands</span></li>
+          <li><b>5</b><span>graphics levels</span></li>
+          <li><b>1</b><span>3D world editor</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============================== FOR FANS ============================== -->
+    <section class="section" id="fans" aria-labelledby="fans-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">For every Speedy Blupi fan</p>
+          <h2 id="fans-title">The Blupi you remember, in a world you can walk around</h2>
+          <p class="lead">
+            In 1998 a yellow egg with big eyes ran, jumped and flew through <em>Speedy Blupi</em>
+            (<em>Speedy Eggbert</em> in English), the 2D platformer by Daniel Roux and EPSITEC.
+            Fans have played it ever since. Galaxy Eggbert rebuilds it as a real 3D game: the rules,
+            the objects and the timing are the original's, and now the worlds have depth.
+          </p>
+        </div>
+
+        <div class="pillars">
+          <article class="pillar">
+            <div class="pillar-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M24 4 7 12v11c0 10.5 7.2 18.9 17 21 9.8-2.1 17-10.5 17-21V12L24 4z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="m16 24 6 6 11-12" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Faithful to the rules</h3>
+            <p>Every gameplay feature is traced to the original game's code: jump heights, lift speeds,
+              crate pushing, the enemies' patrols. If Speedy Blupi didn't do it, Galaxy Eggbert doesn't either.</p>
+          </article>
+          <article class="pillar">
+            <div class="pillar-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M24 5 6 15v18l18 10 18-10V15L24 5z" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/><path d="M6 15l18 10 18-10M24 25v18" fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Truly 3D, not 2.5D</h3>
+            <p>No side-scroller on a rail. Every world is designed in 3D: you walk freely across real
+              heights, caves, towers and bridges, and the camera follows behind Blupi or looks through his eyes.</p>
+          </article>
+          <article class="pillar">
+            <div class="pillar-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><ellipse cx="24" cy="26" rx="13" ry="17" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="19" cy="21" r="3.2" fill="currentColor"/><circle cx="29" cy="21" r="3.2" fill="currentColor"/><path d="M18 31c3.5 3 8.5 3 12 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+            </div>
+            <h3>The original Blupi, rebuilt</h3>
+            <p>The 1998 sprites were rendered from 3D scenes. Galaxy Eggbert converts those same scenes
+              into models, so the Blupi, gadgets and decor you see in 3D come from the original artwork.</p>
+          </article>
+        </div>
+
+        <ol class="timeline" aria-label="From Speedy Blupi to Galaxy Eggbert">
+          <li>
+            <span class="tl-year">1998</span>
+            <span class="tl-title">Speedy Blupi</span>
+            <span class="tl-text">Daniel Roux and EPSITEC release the 2D platformer for Windows on 13&nbsp;September 1998. In English it's <em>Speedy Eggbert</em>.</span>
+          </li>
+          <li>
+            <span class="tl-year">2001</span>
+            <span class="tl-title">Speedy Blupi&nbsp;II</span>
+            <span class="tl-text">A sequel follows three years later.</span>
+          </li>
+          <li>
+            <span class="tl-year">2013</span>
+            <span class="tl-title">Speedy Blupi for Windows Phone</span>
+            <span class="tl-text">A mobile edition built on Microsoft XNA brings Blupi to touch screens.</span>
+          </li>
+          <li>
+            <span class="tl-year">2024</span>
+            <span class="tl-title">Mobile Eggbert</span>
+            <span class="tl-text">The OpenEggbert community ports the mobile game to modern C++, so it runs on desktop, Android and the web.</span>
+          </li>
+          <li class="tl-now">
+            <span class="tl-year">2026</span>
+            <span class="tl-title">Galaxy Eggbert</span>
+            <span class="tl-text">The same game, rebuilt in 3D, with a campaign of 78 worlds, an editor for your own and Speedy Blupi&nbsp;II's network game. Version 0.1.0 is released on 11&nbsp;November.</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================== FEATURES ============================== -->
+    <section class="section section-alt" id="features" aria-labelledby="features-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">What's inside</p>
+          <h2 id="features-title">Everything Blupi can do, now in three dimensions</h2>
+          <p class="lead">A complete game, playable from the first lesson to the final red arrow, plus tools to build your own.</p>
+        </div>
+
+        <div class="feature">
+          <figure class="feature-media">
+            <a href="assets/shots/feat-3d.webp" data-lightbox="features" data-caption="World 8, the Sky Works: machines and platforms floating in the clouds">
+              <img src="assets/shots/thumb/feat-3d.webp" alt="Blupi on a floating platform in the Sky Works, with machines and stepping stones hanging in the clouds" width="800" height="480" loading="lazy">
+            </a>
+          </figure>
+          <div class="feature-text">
+            <p class="feature-kicker">Explore</p>
+            <h3>Real 3D worlds, designed by hand</h3>
+            <p>The 2D maps of the original set each world's theme, mechanics and difficulty. The worlds
+              themselves are new 3D designs, built one voxel at a time. There are no flattened tracks
+              or extruded 2D layouts.</p>
+            <ul class="ticks">
+              <li>Free movement on every axis, with real heights to climb and fall from</li>
+              <li>A chase camera that rises over walls behind Blupi, or first person with <kbd>F3</kbd></li>
+              <li>Swim at the surface, dive with <kbd>Shift</kbd> and jump out onto the bank</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature feature-flip">
+          <figure class="feature-media">
+            <a href="assets/shots/feat-vehicles.webp" data-lightbox="features" data-caption="World 10: Blupi flies his helicopter over a lake of lava">
+              <img src="assets/shots/thumb/feat-vehicles.webp" alt="Blupi wearing the helicopter, hovering over glowing lava" width="800" height="480" loading="lazy">
+            </a>
+          </figure>
+          <div class="feature-text">
+            <p class="feature-kicker">Ride &amp; use</p>
+            <h3>Every gadget, every vehicle</h3>
+            <p>The helicopter that drops glue, the jeep, the tank, the hovercraft and the skateboard.
+              Dynamite to blast walls, drinks that make Blupi hide, lollipops, keys and teleporters.
+              They all came over from the original, with the original's timing.</p>
+            <ul class="chips" aria-label="Gadgets">
+              <li>Helicopter</li><li>Jeep</li><li>Tank</li><li>Hovercraft</li><li>Skateboard</li>
+              <li>Dynamite</li><li>Glue</li><li>Drinks</li><li>Lollipops</li><li>Teleporters</li>
+              <li>Lifts</li><li>Crates</li><li>Conveyors</li><li>Switches</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature">
+          <figure class="feature-media">
+            <a href="assets/shots/feat-hazards.webp" data-lightbox="features" data-caption="World 4: a corridor of spiked mines through the cheese">
+              <img src="assets/shots/thumb/feat-hazards.webp" alt="Rows of red spiked mines on a narrow cheese path in front of Blupi" width="800" height="480" loading="lazy">
+            </a>
+          </figure>
+          <div class="feature-text">
+            <p class="feature-kicker">Survive</p>
+            <h3>Mines, wasps, lava, and a lot of nerve</h3>
+            <p>Mines sit still, patrol or hang from the ceiling. Birds, fish, wasps and bulldozers keep
+              to their routes, and creatures and enemy Blupis come after you. Saws spin, fans blow,
+              crushers stamp, lightning strikes and lava glows. Timing is everything.</p>
+            <ul class="chips" aria-label="Enemies and hazards">
+              <li>Mines</li><li>Birds</li><li>Fish</li><li>Wasps</li><li>Bulldozers</li><li>Creatures</li>
+              <li>Saws</li><li>Fans</li><li>Crushers</li><li>Lightning</li><li>Lava</li><li>Deep water</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature feature-flip">
+          <figure class="feature-media">
+            <a href="assets/shots/feat-campaign.webp" data-lightbox="features" data-caption="The main hub: a sign for each of the twelve worlds">
+              <img src="assets/shots/thumb/feat-campaign.webp" alt="Blupi in the main hub next to a world sign, among riveted blue machines" width="800" height="480" loading="lazy">
+            </a>
+          </figure>
+          <div class="feature-text">
+            <p class="feature-kicker">Progress</p>
+            <h3>A full campaign: 12 lands, 64 missions</h3>
+            <p>Start in the main hub and pick any of the twelve worlds. In each world's hub the next
+              mission's bar slides up when you win the one before. Collect every treasure, grab the
+              eggs for extra lives, and finish each world with the golden key.</p>
+            <ul class="ticks">
+              <li>Main hub, 12 world hubs, 64 missions and a bonus world</li>
+              <li>Three player profiles, each with its own progress</li>
+              <li>Quit at any time and <em>Continue</em> from the same spot later</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature">
+          <figure class="feature-media">
+            <a href="assets/shots/feat-models.webp" data-lightbox="features" data-caption="Blupi, the palms, the trees and the hut: all converted from the original 3D scenes">
+              <img src="assets/shots/thumb/feat-models.webp" alt="Blupi looking at the camera with his hand on his chin, beside 3D palm trees, conifers and a log hut" width="800" height="480" loading="lazy">
+            </a>
+          </figure>
+          <div class="feature-text">
+            <p class="feature-kicker">Look</p>
+            <h3>Made from the original artwork</h3>
+            <p>The 1998 sprites were rendered from 3D scenes. Galaxy Eggbert converts those scenes into
+              animated models, so you get Blupi himself, with an animation for every action: running,
+              climbing, cheering, wobbling at an edge. The treasure chests, enemies, palms, houses and
+              machines are converted the same way. Rocks, cheese, slime, pipes and palace walls get
+              relief from the original scenes too.</p>
+          </div>
+        </div>
+
+        <!-- 3D effects comparison -->
+        <div class="fx" id="effects">
+          <div class="fx-text">
+            <p class="feature-kicker">Shine</p>
+            <h3>From classic to Ultra: five graphics levels</h3>
+            <p><strong>Off</strong> keeps the clean classic look and runs on modest hardware. Each step up
+              adds more: fog and particles on <strong>Low</strong>, water and lava shaders on
+              <strong>Medium</strong>, real sun shadows and lights from explosions on <strong>High</strong>.
+              <strong>Ultra</strong> adds HDR lighting, reflections, global illumination, volumetric fog
+              and depth of field.</p>
+            <p class="fine">Drag the slider to compare: the same game tick of World 5, rendered Off and Ultra. The effects only change the picture, and the game plays exactly the same at every level.</p>
+            <ul class="fx-levels" aria-label="Graphics levels">
+              <li><b>Off</b> classic look</li>
+              <li><b>Low</b> fog, soft shadows, particles</li>
+              <li><b>Medium</b> water &amp; lava shaders, ambient occlusion</li>
+              <li><b>High</b> sun shadows, point lights, materials</li>
+              <li><b>Ultra</b> HDR, SSR, GI, god rays, TAA</li>
+            </ul>
+          </div>
+          <div class="compare" data-compare>
+            <img class="compare-img" src="assets/shots/fx-off.webp" alt="The same scene with 3D effects turned off" width="800" height="480" loading="lazy">
+            <div class="compare-top">
+              <img class="compare-img" src="assets/shots/fx-ultra.webp" alt="The same scene with 3D effects on Ultra" width="800" height="480" loading="lazy">
+            </div>
+            <span class="compare-label compare-label-left">Ultra</span>
+            <span class="compare-label compare-label-right">Off</span>
+            <div class="compare-handle" aria-hidden="true"><span></span></div>
+            <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare graphics Off and Ultra">
+          </div>
+        </div>
+
+        <!-- small features grid -->
+        <div class="mini-grid">
+          <article class="mini">
+            <h3><span class="mini-icon" aria-hidden="true">🎮</span> Play your way</h3>
+            <p>Keyboard, mouse, gamepad or touch screen. On phones the on-screen pad takes several fingers at
+              once, and on Android you can steer by tilting the device.</p>
+          </article>
+          <article class="mini">
+            <h3><span class="mini-icon" aria-hidden="true">🎬</span> Demos, like the original</h3>
+            <p>Leave the main menu alone and Blupi starts playing ten demo runs. Record your own run of any
+              mission from the pause menu, then export it and share it as a file.</p>
+          </article>
+          <article class="mini">
+            <h3><span class="mini-icon" aria-hidden="true">🪄</span> Classic cheats</h3>
+            <p>Type the old cheat words, or open the cheat menu with <kbd>F12</kbd>.
+              <code>xnjttjpo</code> still opens the editor on the world you're playing. Type
+              <code>fairplay</code> to lock cheats for an honest run.</p>
+          </article>
+          <article class="mini">
+            <h3><span class="mini-icon" aria-hidden="true">💾</span> Saves that stay put</h3>
+            <p>Three player profiles, progress per profile and a resume file, so you can quit mid-mission. On the web,
+              progress lives in your browser's storage and survives a reload.</p>
+          </article>
+          <article class="mini">
+            <h3><span class="mini-icon" aria-hidden="true">⏩</span> Speed &amp; comfort</h3>
+            <p>Normal, fast or slow game speed. Frame rates above 60 are smoothed between game ticks.
+              The help screen (<kbd>F1</kbd>) explains every control.</p>
+          </article>
+          <article class="mini">
+            <h3><span class="mini-icon" aria-hidden="true">🎵</span> The original soundtrack</h3>
+            <p>The music of the 1998 game and the sound effects from Speedy Blupi that fans know by heart,
+              Blupi's <em>ouf!</em> included.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== WORLDS ============================== -->
+    <section class="section" id="worlds" aria-labelledby="worlds-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Twelve lands to conquer</p>
+          <h2 id="worlds-title">The worlds</h2>
+          <p class="lead">Each world has its own look, its own tricks and a hub that opens one mission at a time.
+            Every world is open from the start, so go where you like.</p>
+        </div>
+
+        <ul class="worlds">
+          <li class="world">
+            <a class="world-shot" href="assets/shots/w01.webp" data-lightbox="worlds" data-caption="World 1, the Blue Machine"><img src="assets/shots/thumb/w01.webp" alt="World 1, the Blue Machine" width="800" height="480" loading="lazy"></a>
+            <div class="world-body"><span class="world-num">World 1</span><h3>The Blue Machine</h3>
+              <p>Riveted panels, elevators and the first lessons. Learn to jump, ride and keep out of the water.</p><span class="world-meta">4 missions</span></div>
+          </li>
+          <li class="world">
+            <a class="world-shot" href="assets/shots/w02.webp" data-lightbox="worlds" data-caption="World 2, the White Palace"><img src="assets/shots/thumb/w02.webp" alt="World 2, the White Palace" width="800" height="480" loading="lazy"></a>
+            <div class="world-body"><span class="world-num">World 2</span><h3>The White Palace</h3>
+              <p>Polished white halls, tiled floors and columns, with keys that open the doors deeper inside.</p><span class="world-meta">5 missions</span></div>
+          </li>
+          <li class="world">
+            <a class="world-shot" href="assets/shots/w03.webp" data-lightbox="worlds" data-caption="World 3, the Village"><img src="assets/shots/thumb/w03.webp" alt="World 3, the Village" width="800" height="480" loading="lazy"></a>
+            <div class="world-body"><span class="world-num">World 3</span><h3>The Village</h3>
+              <p>A street of slate roofs, windows and red doors between grassy hills and conifers.</p><span class="world-meta">4 missions</span></div>
+          </li>
+          <li class="world">
+            <a class="world-shot" href="assets/shots/w04.webp" data-lightbox="worlds" data-caption="World 4, the Cheese Wheel"><img src="assets/shots/thumb/w04.webp" alt="World 4, the Cheese Wheel" width="800" height="480" loading="lazy"></a>
+            <div class="world-body"><span class="world-num">World 4</span><h3>The Cheese Wheel</h3>
+              <p>Tunnels and holes through a giant block of Swiss cheese, under a canopy of leaves.</p><span class="world-meta">6 missions</span></div>
+          </li>
+          <li class="world">
+            <a class="world-shot" href="assets/shots/w05.webp" data-lightbox="worlds" data-caption="World 5, the Space Station"><img src="assets/shots/thumb/w05.webp" alt="World 5, the Space Station" width="800" height="480" loading="lazy"></a>
+            <div class="world-body"><span class="world-num">World 5</span><h3>The Space Station</h3>
+              <p>Dark perforated decks, lightning gates and lava pits aboard a station in space. The longest world.</p><span class="world-meta">8 missions</span></div>
+          </li>
+          <li class="world">
+            <a class="world-shot" href="assets/shots/w06.webp" data-lightbox="worlds" data-caption="World 6, the Slime Grotto"><img src="assets/shots/thumb/w06.webp" alt="World 6, the Slime Grotto" width="800" height="480" loading="lazy"></a>
+            <div class="world-body"><span class="world-num">World 6</span><h3>The Slime Grotto</h3>
+              <p>Shelves, vaults and columns of green slime deep inside a glowing cave.</p><span class="world-meta">6 missions</span></div>
+          </li>
+          <li class="world">
+            <a class="world-shot" href="assets/shots/w07.webp" data-lightbox="worlds" data-caption="World 7, the Toy Blocks"><img src="assets/shots/thumb/w07.webp" alt="World 7, the Toy Blocks" width="800" height="480" loading="lazy"></a>
+            <div class="world-body"><span class="world-num">World 7</span><h3>The Toy Blocks</h3>
+              <p>Balls, marbles, toadstools and candy poles stacked into a giant playroom.</p><span class="world-meta">5 missions</span></div>
+          </li>
+          <li class="world">
+            <a class="world-shot" href="assets/shots/w08.webp" data-lightbox="worlds" data-caption="World 8, the Sky Works"><img src="assets/shots/thumb/w08.webp" alt="World 8, the Sky Works" width="800" height="480" loading="lazy"></a>
+            <div class="world-body"><span class="world-num">World 8</span><h3>The Sky Works</h3>
+              <p>Cyan machines and pipe runs floating in the sky, with saucers that vanish under your feet.</p><span class="world-meta">4 missions</span></div>
+          </li>
+          <li class="world">
+            <a class="world-shot" href="assets/shots/w09.webp" data-lightbox="worlds" data-caption="World 9, the Sinkhole of Clods"><img src="assets/shots/thumb/w09.webp" alt="World 9, the Sinkhole of Clods" width="800" height="480" loading="lazy"></a>
+            <div class="world-body"><span class="world-num">World 9</span><h3>The Sinkhole of Clods</h3>
+              <p>A sponge of clay clods with the red cave showing through, leading ever deeper.</p><span class="world-meta">5 missions</span></div>
+          </li>
+          <li class="world">
+            <a class="world-shot" href="assets/shots/w10.webp" data-lightbox="worlds" data-caption="World 10, the Cobbles"><img src="assets/shots/thumb/w10.webp" alt="World 10, the Cobbles" width="800" height="480" loading="lazy"></a>
+            <div class="world-body"><span class="world-num">World 10</span><h3>The Cobbles</h3>
+              <p>Heaps of grey cobbled stone on slender posts under a dark sky.</p><span class="world-meta">7 missions</span></div>
+          </li>
+          <li class="world">
+            <a class="world-shot" href="assets/shots/w11.webp" data-lightbox="worlds" data-caption="World 11, the Machine Pit"><img src="assets/shots/thumb/w11.webp" alt="World 11, the Machine Pit" width="800" height="480" loading="lazy"></a>
+            <div class="world-body"><span class="world-num">World 11</span><h3>The Machine Pit</h3>
+              <p>A pit cut deep into the machine, its walls stepping out as you climb.</p><span class="world-meta">5 missions</span></div>
+          </li>
+          <li class="world">
+            <a class="world-shot" href="assets/shots/w12.webp" data-lightbox="worlds" data-caption="World 12, the Brick Tower"><img src="assets/shots/thumb/w12.webp" alt="World 12, the Brick Tower" width="800" height="480" loading="lazy"></a>
+            <div class="world-body"><span class="world-num">World 12</span><h3>The Brick Tower</h3>
+              <p>A tower of worn brick, floor by floor, up to the last of the twelve golden keys.</p><span class="world-meta">5 missions</span></div>
+          </li>
+        </ul>
+
+        <div class="bonus">
+          <a class="world-shot" href="assets/shots/w199.webp" data-lightbox="worlds" data-caption="The bonus world"><img src="assets/shots/thumb/w199.webp" alt="The bonus world" width="800" height="480" loading="lazy"></a>
+          <div>
+            <p class="eyebrow">And then…</p>
+            <h3>The bonus world</h3>
+            <p>Win all twelve worlds and the gold bars at the top of the main hub open the way to a final
+              journey. It takes strong inspiration from the original's last world and draws on every land
+              you've crossed. Reach its red arrow to see the end.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== SCREENSHOTS ============================== -->
+    <section class="section section-alt" id="screenshots" aria-labelledby="shots-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Gallery</p>
+          <h2 id="shots-title">Screenshots</h2>
+          <p class="lead">Captured from the current build at 1600&times;960 with Ultra graphics. Click any picture to enlarge it.</p>
+        </div>
+        <div class="gallery" id="gallery">
+          <!-- Filled from assets/js/gallery-data.js; static fallback links below for no-JS visitors. -->
+          <noscript>
+            <p><a href="assets/shots/">Open the screenshot folder</a></p>
+          </noscript>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== EDITOR ============================== -->
+    <section class="section" id="editor" aria-labelledby="editor-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Build, play, share</p>
+          <h2 id="editor-title">A 3D world editor, built into the game</h2>
+          <p class="lead">Galaxy Eggbert ships with a complete 3D world editor. Build a level, play it at once,
+            then link your worlds into a whole galaxy of your own.</p>
+        </div>
+
+        <div class="feature">
+          <figure class="feature-media">
+            <a href="assets/shots/editor.webp" data-lightbox="editor" data-caption="The 3D world editor: the palette on the left, coordinates on top, the move and Place bar below">
+              <img src="assets/shots/thumb/editor.webp" alt="The in-game 3D world editor with its palette of blocks and objects, showing rows of blocks and models" width="800" height="480" loading="lazy">
+            </a>
+            <a class="feature-inset" href="assets/shots/editor-worlds.webp" data-lightbox="editor" data-caption="Ten world slots per player, with Import, Export and Backups">
+              <img src="assets/shots/thumb/editor-worlds.webp" alt="The editor's world list with ten slots and Import, Export and Backups buttons" width="800" height="480" loading="lazy">
+            </a>
+          </figure>
+          <div class="feature-text">
+            <p class="feature-kicker">3D World Editor</p>
+            <h3>Block by block, then press Play</h3>
+            <ul class="ticks">
+              <li>A palette of every block, object, enemy, vehicle and big decor in the game</li>
+              <li>Neighbouring tiles fit themselves together as you place blocks</li>
+              <li>Fill whole 3D regions, copy and paste, turn objects and set patrol routes</li>
+              <li>Ten world slots per player, with Undo and Redo, automatic backups and a thumbnail for every saved world</li>
+              <li>Play-test instantly, then go straight back to editing</li>
+              <li>Works with mouse and keyboard, a gamepad, or touch alone</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature feature-flip">
+          <figure class="feature-media">
+            <a href="assets/shots/galaxy.webp" data-lightbox="editor" data-caption="The galaxy screen: a main hub, worlds 1–14, each with its own hub and missions 1–8, plus world 199">
+              <img src="assets/shots/thumb/galaxy.webp" alt="The galaxy screen with buttons for the main hub, world 199, worlds 1 to 14 and the selected world's hub and missions, plus Export, Import and Backups" width="800" height="480" loading="lazy">
+            </a>
+          </figure>
+          <div class="feature-text">
+            <p class="feature-kicker">Your own galaxy</p>
+            <h3>Make a campaign, not just a level</h3>
+            <p>Every player has a galaxy of their own: a main hub, up to 14 world hubs with 8 missions each, and a bonus world. It follows the
+              campaign's hub rules and keeps its own progress. Give it a name, then <strong>export the whole
+              galaxy as one file</strong> for friends to import, on the desktop or on the web.</p>
+            <p class="fine">Recorded demos travel too. A run you recorded in someone's galaxy finds its world on any player's machine.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== MULTIPLAYER ============================== -->
+    <section class="section section-alt" id="multiplayer" aria-labelledby="multiplayer-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">New in 0.1.0</p>
+          <h2 id="multiplayer-title">Play together: Speedy Blupi&nbsp;II's network game</h2>
+          <p class="lead">Two to four Blupis in one world. Galaxy Eggbert brings back the network game of
+            Speedy Blupi&nbsp;II, with its rules, its arenas and its bombs, now in 3D.</p>
+        </div>
+
+        <div class="feature">
+          <figure class="feature-media">
+            <a href="assets/shots/feat-multiplayer.webp" data-lightbox="multiplayer" data-caption="Mission #201: Ben, the orange player, heads for the yellow team's bombs">
+              <img src="assets/shots/thumb/feat-multiplayer.webp" alt="The yellow Blupi in front of a row of yellow spiked bombs, with the orange player Ben, his name over his head, on the far side" width="800" height="480" loading="lazy">
+            </a>
+            <a class="feature-inset" href="assets/shots/mp-lobby.webp" data-lightbox="multiplayer" data-caption="The lobby: players, colours, lives, time limit and the chat">
+              <img src="assets/shots/thumb/mp-lobby.webp" alt="The multiplayer lobby listing Ann (host, yellow) and Ben (orange), both ready, with Lives, Time limit and chat" width="800" height="480" loading="lazy">
+            </a>
+          </figure>
+          <div class="feature-text">
+            <p class="feature-kicker">Multiplayer</p>
+            <h3>Lay your bombs, keep your lives, be the last one standing</h3>
+            <p>Every player starts with ten lives at the start of their colour: yellow, orange, blue or green.
+              Each team has its own bombs. Pick one up, lay it where the others will run, and stay clear of
+              theirs, because another team's bomb kills at a touch. Tank and helicopter shots hit the other
+              players too. Whoever is still in the game at the end wins.</p>
+            <ul class="ticks">
+              <li>2 to 4 players: Windows, Linux and Android in one match</li>
+              <li>A lobby with colours, a ready check and a chat</li>
+              <li>The host sets the lives and an optional time limit</li>
+              <li>Each player's name floats over their Blupi, in their colour</li>
+              <li>Chat during the match, see who got whom, then a rematch</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="feature feature-flip">
+          <figure class="feature-media">
+            <a href="assets/shots/mp-win.webp" data-lightbox="multiplayer" data-caption="The last one standing wins: the results, place by place">
+              <img src="assets/shots/thumb/mp-win.webp" alt="Blupi cheering on a green screen under the results: Congratulations, you won, you're the only survivor, 1st Ann (Yellow), 2nd Ben (Orange)" width="800" height="480" loading="lazy">
+            </a>
+          </figure>
+          <div class="feature-text">
+            <p class="feature-kicker">Arenas</p>
+            <h3>Seventeen arenas, and your own worlds too</h3>
+            <p>The host picks the arena: the twelve network worlds of Speedy Blupi&nbsp;II (#201–#212), five new
+              ones made for Galaxy Eggbert (#213–#217), or any world from their own 3D editor, which the game
+              sends to the other players.</p>
+            <ul class="ticks">
+              <li>Play on one local network: the same Wi-Fi or wired network</li>
+              <li>Over the internet with a virtual LAN such as ZeroTier, or by the host's address</li>
+              <li>Everyone needs the same version of the game</li>
+              <li>Not in the web version: a browser can't find games on the network</li>
+            </ul>
+            <p class="fine">How to set it up, step by step: the
+              <a href="https://github.com/openeggbert/galaxy-eggbert/blob/develop/docs/handbook/09-multiplayer.md" rel="noopener">multiplayer guide</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== PLAY ONLINE ============================== -->
+    <section class="section play-section" id="play" aria-labelledby="play-title">
+      <div class="wrap play-grid">
+        <div>
+          <p class="eyebrow">No install needed</p>
+          <h2 id="play-title">Play it right now, in your browser</h2>
+          <p class="lead">The full game, compiled to WebAssembly with WebGL&nbsp;2. That means the whole campaign, the editor, the demos
+            and saved progress, all in a browser tab.</p>
+          <ul class="ticks">
+            <li>About 100&nbsp;MB to download when the game starts</li>
+            <li>Progress, recorded demos and edited worlds are kept in your browser</li>
+            <li>Tested in Chrome. Works best in a recent desktop browser</li>
+          </ul>
+          <div class="hero-cta">
+            <a class="btn btn-primary btn-lg" href="play/">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.53.85l10.2-6.5a1 1 0 0 0 0-1.7L9.53 4.65A1 1 0 0 0 8 5.5z"/></svg>
+              Launch the web version
+            </a>
+            <a class="btn btn-ghost" href="#controls">See the controls</a>
+          </div>
+        </div>
+        <a class="play-card" href="play/" aria-label="Launch the web version">
+          <img src="assets/shots/thumb/menu.webp" alt="The Galaxy Eggbert main menu" width="800" height="480" loading="lazy">
+          <span class="play-card-btn" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="40" height="40"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.53.85l10.2-6.5a1 1 0 0 0 0-1.7L9.53 4.65A1 1 0 0 0 8 5.5z"/></svg>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================== DOWNLOAD ============================== -->
+    <section class="section section-alt" id="download" aria-labelledby="download-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Get the game</p>
+          <h2 id="download-title">Download</h2>
+          <p class="lead">Galaxy Eggbert is free and always will be. <strong>Version 0.1.0</strong>, released on
+            11&nbsp;November 2026, is ready for Windows, Linux, Android and the web. Pick your platform below, or see
+            everything on <a href="https://github.com/openeggbert/galaxy-eggbert/releases/tag/v0.1.0" rel="noopener">GitHub Releases</a>
+            (with the <a href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v0.1.0/SHA256SUMS.txt" rel="noopener">checksums</a>).</p>
+        </div>
+
+        <!--
+          HOW TO UPDATE A PLATFORM when a release is published:
+          1. set data-status on the card: available | preview | soon | planned
+          2. change the pill text and point the primary button at the release asset
+          Release assets live at https://github.com/openeggbert/galaxy-eggbert/releases
+        -->
+        <div class="downloads">
+          <article class="dl" data-platform="web" data-status="available">
+            <div class="dl-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="18" fill="none" stroke="currentColor" stroke-width="3"/><path d="M6 24h36M24 6c5 5.5 7 11.5 7 18s-2 12.5-7 18c-5-5.5-7-11.5-7-18s2-12.5 7-18z" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+            </div>
+            <h3>Web browser</h3>
+            <span class="pill pill-ok">Available</span>
+            <p>Play instantly in a modern browser. WebAssembly + WebGL&nbsp;2, nothing to install.</p>
+            <div class="dl-actions">
+              <a class="btn btn-primary" href="play/">Play now</a>
+              <a class="btn btn-link" href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v0.1.0/GalaxyEggbert-0.1.0-web.zip" rel="noopener">Download to host it (83&nbsp;MB)</a>
+            </div>
+          </article>
+
+          <article class="dl" data-platform="linux" data-status="available">
+            <div class="dl-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><rect x="5" y="8" width="38" height="32" rx="5" fill="none" stroke="currentColor" stroke-width="3"/><path d="m13 19 6 5-6 5M23 30h11" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Linux</h3>
+            <span class="pill pill-ok">Version 0.1.0</span>
+            <p>A portable x86-64 bundle: extract it and run <code>./run-galaxy-eggbert</code>. It needs glibc&nbsp;2.38 or newer
+              (Debian&nbsp;13, Ubuntu&nbsp;24.04 and later).</p>
+            <div class="dl-actions">
+              <a class="btn btn-primary" href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v0.1.0/GalaxyEggbert-0.1.0-linux-x86_64.tar.gz" rel="noopener">Download .tar.gz (163&nbsp;MB)</a>
+              <a class="btn btn-link" href="#build-linux">Build it yourself</a>
+            </div>
+          </article>
+
+          <article class="dl" data-platform="windows" data-status="available">
+            <div class="dl-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M6 10.5 21 8.4v14.1H6zM24 8l18-2.5v17H24zM6 25.5h15v14.1L6 37.5zM24 25.5h18v17L24 40z" fill="currentColor"/></svg>
+            </div>
+            <h3>Windows</h3>
+            <span class="pill pill-ok">Version 0.1.0</span>
+            <p>64-bit Windows: extract the zip and start <code>GalaxyEggbert.exe</code>. It needs OpenGL&nbsp;3.3.
+              This first Windows build has mostly been tested under Wine, so please report anything odd.</p>
+            <div class="dl-actions">
+              <a class="btn btn-primary" href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v0.1.0/GalaxyEggbert-0.1.0-windows-x86_64.zip" rel="noopener">Download .zip (166&nbsp;MB)</a>
+              <a class="btn btn-link" href="https://github.com/openeggbert/galaxy-eggbert/issues" rel="noopener">Report a problem</a>
+            </div>
+          </article>
+
+          <article class="dl" data-platform="android" data-status="available">
+            <div class="dl-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M10 30a14 14 0 0 1 28 0z" fill="currentColor"/><path d="m15 15-3-5M33 15l3-5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="18" cy="23" r="2" fill="var(--bg)"/><circle cx="30" cy="23" r="2" fill="var(--bg)"/><rect x="10" y="32" width="28" height="9" rx="3" fill="currentColor" opacity=".55"/></svg>
+            </div>
+            <h3>Android</h3>
+            <span class="pill pill-ok">Version 0.1.0</span>
+            <p>An APK for arm64 phones and tablets with Android&nbsp;7.0 or newer, with touch and tilt controls. Allow installing
+              from your browser or file manager when Android asks.</p>
+            <div class="dl-actions">
+              <a class="btn btn-primary" href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v0.1.0/GalaxyEggbert-0.1.0-android-arm64.apk" rel="noopener">Download .apk (123&nbsp;MB)</a>
+              <a class="btn btn-link" href="https://github.com/openeggbert/galaxy-eggbert/blob/develop/ANDROID.md" rel="noopener">Build the APK</a>
+            </div>
+          </article>
+
+          <article class="dl" data-platform="macos" data-status="planned">
+            <div class="dl-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><rect x="9" y="9" width="30" height="21" rx="3" fill="none" stroke="currentColor" stroke-width="3"/><path d="M4 36h40l-3 4H7z" fill="currentColor"/></svg>
+            </div>
+            <h3>macOS</h3>
+            <span class="pill pill-plan">Planned</span>
+            <p>Galaxy Eggbert is built on SDL3, which runs on Macs too. A native Mac build is on the roadmap. Until then the web version works in any modern Mac browser.</p>
+            <div class="dl-actions">
+              <a class="btn btn-ghost" href="play/">Play on the web</a>
+            </div>
+          </article>
+
+          <article class="dl" data-platform="ios" data-status="planned">
+            <div class="dl-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><rect x="13" y="4" width="22" height="40" rx="5" fill="none" stroke="currentColor" stroke-width="3"/><path d="M21 9h6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="24" cy="38" r="2" fill="currentColor"/></svg>
+            </div>
+            <h3>iPhone &amp; iPad</h3>
+            <span class="pill pill-plan">Planned</span>
+            <p>A native iOS app is planned. You can already try the web version in Safari, which has touch controls.
+              It's experimental, and a recent device helps.</p>
+            <div class="dl-actions">
+              <a class="btn btn-ghost" href="play/">Try in Safari</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="build-notes">
+          <details id="build-linux">
+            <summary>Build on Linux</summary>
+            <p>You need CMake, a C++ compiler and the sibling checkouts of <a href="https://github.com/openeggbert" rel="noopener">CNA and cna-engine</a> next to the game:</p>
+<pre><code>git clone https://github.com/openeggbert/galaxy-eggbert.git
+cd galaxy-eggbert
+cmake -S . -B build -DGALAXY_EGGBERT_BUILD_CNA=ON -DCNA_GRAPHICS_RENDERER=OPENGL33
+cmake --build build --target GalaxyEggbertCNA -j8
+cd build &amp;&amp; ./GalaxyEggbert</code></pre>
+            <p>To get a relocatable bundle, build the <code>package</code> target (Release). It produces <code>GalaxyEggbert-&lt;version&gt;-linux-x86_64.tar.gz</code> with a <code>run-galaxy-eggbert</code> launcher.</p>
+          </details>
+          <details id="self-host">
+            <summary>Host the web version yourself</summary>
+            <p>The web build is a set of static files: <code>GalaxyEggbert.html</code>, <code>.js</code>, <code>.wasm</code>, <code>.data</code>
+              and the <code>Content/music</code> folder. <a href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v0.1.0/GalaxyEggbert-0.1.0-web.zip" rel="noopener">Download them as one zip</a>
+              and serve them over HTTP(S) from any web server. Opening the file from disk won't work.
+              To build it yourself, use Emscripten:</p>
+<pre><code>emcmake cmake -S . -B build-cna-webgl2 -DGALAXY_EGGBERT_BUILD_CNA=ON \
+  -DCNA_GRAPHICS_RENDERER=WEBGL2 -DCMAKE_BUILD_TYPE=Release -DBUILD_TESTING=OFF
+cmake --build build-cna-webgl2 --target GalaxyEggbertCNA -j8</code></pre>
+          </details>
+          <details>
+            <summary>System requirements</summary>
+            <dl class="reqs">
+              <dt>Desktop</dt><dd>64-bit Windows, or 64-bit Linux with glibc&nbsp;2.38 or newer, and a GPU with OpenGL&nbsp;3.3. Ultra graphics are demanding, so a dedicated GPU is recommended.</dd>
+              <dt>Web</dt><dd>A browser with WebGL&nbsp;2 and WebAssembly. It is tested in Chrome, and other current browsers should work.</dd>
+              <dt>Android</dt><dd>Android&nbsp;7.0 (API&nbsp;24) or newer with OpenGL&nbsp;ES&nbsp;3.</dd>
+              <dt>Input</dt><dd>Keyboard, mouse, any SDL-compatible gamepad, or a touch screen.</dd>
+              <dt>Multiplayer</dt><dd>2 to 4 players with the same version of the game, on one local network or a virtual one such as ZeroTier. Not in the web version.</dd>
+            </dl>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== CONTROLS ============================== -->
+    <section class="section" id="controls" aria-labelledby="controls-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">How to play</p>
+          <h2 id="controls-title">Controls</h2>
+          <p class="lead">Collect every treasure in a mission, then reach the red arrow. Eggs give you extra lives. Press <kbd>F1</kbd> in the game for this list at any time.</p>
+        </div>
+
+        <div class="tabs" data-tabs>
+          <div class="tab-list" role="tablist" aria-label="Input device">
+            <button role="tab" id="tab-kb" aria-controls="panel-kb" aria-selected="true">Keyboard</button>
+            <button role="tab" id="tab-pad" aria-controls="panel-pad" aria-selected="false" tabindex="-1">Gamepad</button>
+            <button role="tab" id="tab-touch" aria-controls="panel-touch" aria-selected="false" tabindex="-1">Touch &amp; mouse</button>
+          </div>
+
+          <div class="tab-panel" role="tabpanel" id="panel-kb" aria-labelledby="tab-kb">
+            <dl class="keys">
+              <div><dt><kbd>W</kbd> / <kbd>↑</kbd></dt><dd>Walk forward</dd></div>
+              <div><dt><kbd>A</kbd> <kbd>D</kbd> / <kbd>←</kbd> <kbd>→</kbd></dt><dd>Turn</dd></div>
+              <div><dt><kbd>S</kbd> / <kbd>↓</kbd></dt><dd>Turn around, then walk</dd></div>
+              <div><dt><kbd>Left Ctrl</kbd></dt><dd>Jump · helicopter up</dd></div>
+              <div><dt><kbd>Space</kbd></dt><dd>Action · get in / out of a vehicle</dd></div>
+              <div><dt><kbd>F</kbd></dt><dd>Fire glue from a vehicle</dd></div>
+              <div><dt><kbd>X</kbd> / <kbd>Right Ctrl</kbd></dt><dd>Back up</dd></div>
+              <div><dt><kbd>Left Shift</kbd></dt><dd>Crouch · dive</dd></div>
+              <div><dt><kbd>Shift</kbd> + <kbd>↓</kbd></dt><dd>Pull a crate</dd></div>
+              <div><dt><kbd>Right Shift</kbd></dt><dd>Look up · helicopter up</dd></div>
+              <div><dt><kbd>Esc</kbd></dt><dd>Pause · continue</dd></div>
+              <div><dt><kbd>F3</kbd></dt><dd>First / third person</dd></div>
+              <div><dt><kbd>F5</kbd> <kbd>F6</kbd> · <kbd>Tab</kbd></dt><dd>Normal / fast · slow speed</dd></div>
+              <div><dt><kbd>F11</kbd></dt><dd>Full screen</dd></div>
+            </dl>
+          </div>
+
+          <div class="tab-panel" role="tabpanel" id="panel-pad" aria-labelledby="tab-pad" hidden>
+            <dl class="keys">
+              <div><dt><kbd>Left stick</kbd> / <kbd>D-pad</kbd></dt><dd>Walk and turn</dd></div>
+              <div><dt><kbd>A</kbd></dt><dd>Jump · helicopter up · Play in menus</dd></div>
+              <div><dt><kbd>B</kbd> / <kbd>X</kbd></dt><dd>Action · get in / out</dd></div>
+              <div><dt><kbd>RT</kbd></dt><dd>Fire or drop glue</dd></div>
+              <div><dt><kbd>RB</kbd></dt><dd>Back up</dd></div>
+              <div><dt><kbd>LB</kbd></dt><dd>Crouch · dive</dd></div>
+              <div><dt><kbd>LB</kbd> + <kbd>Down</kbd></dt><dd>Pull a crate</dd></div>
+              <div><dt><kbd>Y</kbd></dt><dd>Look up</dd></div>
+              <div><dt><kbd>Start</kbd> / <kbd>Back</kbd></dt><dd>Pause · continue</dd></div>
+            </dl>
+          </div>
+
+          <div class="tab-panel" role="tabpanel" id="panel-touch" aria-labelledby="tab-touch" hidden>
+            <dl class="keys">
+              <div><dt>On-screen stick</dt><dd>Walk and turn. Hold it and press Jump at the same time</dd></div>
+              <div><dt>Jump · Action · Pause</dt><dd>On-screen buttons</dd></div>
+              <div><dt>Fire</dt><dd>Hold to fire glue from the tank or helicopter</dd></div>
+              <div><dt>Back-up button</dt><dd>Sits above the stick</dd></div>
+              <div><dt>Tilt (Android)</dt><dd>Steer with the accelerometer, if you turn it on in Setup</dd></div>
+              <div><dt>Mouse drag</dt><dd>Hold the left button and drag to look around. Walking re-centres the camera</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== UNDER THE HOOD ============================== -->
+    <section class="section section-alt" id="tech" aria-labelledby="tech-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Under the hood</p>
+          <h2 id="tech-title">Built with care, tested by robots</h2>
+          <p class="lead">Galaxy Eggbert is modern C++ on <strong>CNA</strong>, an open reimplementation of Microsoft XNA&nbsp;4.0,
+            the framework the 2013 mobile Speedy Blupi was written in. A single code base runs on desktop OpenGL,
+            OpenGL&nbsp;ES on Android and WebGL&nbsp;2 in the browser.</p>
+        </div>
+
+        <ul class="stats">
+          <li><b data-count="117">117</b><span>automated tests</span></li>
+          <li><b data-count="64">64</b><span>missions played through by a bot</span></li>
+          <li><b data-count="10">10</b><span>demos replayed exactly by the tests</span></li>
+          <li><b data-count="1800" data-suffix="+">1800+</b><span>commits</span></li>
+        </ul>
+
+        <div class="tech-grid">
+          <article class="tech">
+            <h3>Voxel worlds</h3>
+            <p>Worlds are stored in a compact voxel format of 100×100×100 blocks in 10³ chunks. Every block keeps
+              the original's tile number, so the art and the rules stay linked.</p>
+          </article>
+          <article class="tech">
+            <h3>Scripted playthroughs</h3>
+            <p>A QA autoplay plays every mission, every world as one chain and the whole campaign from a new game,
+              then checks the result after each change.</p>
+          </article>
+          <article class="tech">
+            <h3>Golden frames</h3>
+            <p>Reference images guard the renderer. The 3D effects are presentation only: with them on, the game's
+              simulation trace stays bit-for-bit identical.</p>
+          </article>
+          <article class="tech">
+            <h3>Fidelity audit</h3>
+            <p>Mechanics, objects and timings are logged against the original's source. Every intentional 3D
+              adaptation is written down and explained.</p>
+          </article>
+          <article class="tech">
+            <h3>Cross-platform</h3>
+            <p>SDL3 for windows, input and audio. OpenGL&nbsp;3.3 on desktop, OpenGL&nbsp;ES&nbsp;3 on Android,
+              and Emscripten with WebGL&nbsp;2 on the web.</p>
+          </article>
+          <article class="tech">
+            <h3>Open source</h3>
+            <p>All of it is on GitHub under the GPL-3.0: the game, the world generators, the asset converters
+              and the test tools. Read it, learn from it, improve it.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== ROADMAP ============================== -->
+    <section class="section" id="roadmap" aria-labelledby="roadmap-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Where we're heading</p>
+          <h2 id="roadmap-title">Roadmap</h2>
+        </div>
+        <div class="roadmap">
+          <div class="road-col">
+            <h3><span class="dot dot-ok"></span>Done</h3>
+            <ul>
+              <li>The whole campaign: main hub, 12 worlds, 64 missions, bonus world</li>
+              <li>Blupi, objects and decor converted from the original 3D scenes</li>
+              <li>3D world editor and player galaxies, with export and import</li>
+              <li>Demos: playback, recording and sharing</li>
+              <li>Graphics levels from Off to Ultra, and sharper 2× textures</li>
+              <li>Web version, plus keyboard, gamepad and touch input</li>
+              <li>Multiplayer for 2 to 4 players: Speedy Blupi&nbsp;II's network game</li>
+              <li>The first release, 0.1.0: Windows, Linux, Android and the web</li>
+            </ul>
+          </div>
+          <div class="road-col">
+            <h3><span class="dot dot-now"></span>In progress</h3>
+            <ul>
+              <li>Nicknames for players A, B and C, shown in multiplayer</li>
+              <li>Multiplayer matches between more real machines and over the internet</li>
+              <li>Testing the Windows build on more PCs</li>
+              <li>More testing with real gamepads and touch screens</li>
+            </ul>
+          </div>
+          <div class="road-col">
+            <h3><span class="dot dot-plan"></span>Later</h3>
+            <ul>
+              <li>Native macOS build</li>
+              <li>Native iPhone and iPad app</li>
+              <li>Your ideas: <a href="https://github.com/openeggbert/galaxy-eggbert/issues" rel="noopener">open an issue</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== FAQ ============================== -->
+    <section class="section section-alt" id="faq" aria-labelledby="faq-title">
+      <div class="wrap narrow">
+        <div class="section-head">
+          <p class="eyebrow">Questions</p>
+          <h2 id="faq-title">Frequently asked</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Is Galaxy Eggbert free?</summary>
+            <p>Yes. It's free to play and open source under the GNU GPL&nbsp;3.0. There are no ads, no purchases and no accounts.</p>
+          </details>
+          <details>
+            <summary>Do I need the original Speedy Blupi to play?</summary>
+            <p>No. Everything the game needs comes with it, and the web version runs straight from this site.</p>
+          </details>
+          <details>
+            <summary>Is it the same game as Speedy Blupi?</summary>
+            <p>Same hero, same rules, same gadgets and enemies, and the same campaign structure and themes. The levels
+              themselves are new 3D designs based on each original world's identity, mechanics and difficulty.
+              The 2D maps couldn't simply be converted.</p>
+          </details>
+          <details>
+            <summary>Is this an official EPSITEC game?</summary>
+            <p>No. Galaxy Eggbert is an independent fan project of the <a href="https://openeggbert.com" rel="noopener">OpenEggbert</a> community.
+              Speedy Blupi and Blupi were created by Daniel Roux and EPSITEC&nbsp;SA, and the rights to the original
+              game belong to them.</p>
+          </details>
+          <details>
+            <summary>Where are my saved games?</summary>
+            <p>On Linux in <code>~/.local/share/Galaxy Eggbert</code> and on Windows in <code>%LOCALAPPDATA%\Galaxy Eggbert</code>.
+              That folder holds your progress, recorded demos and your own worlds. In the browser everything is kept in the site's storage
+              (IndexedDB), so clearing this site's data also deletes your progress.</p>
+          </details>
+          <details>
+            <summary>The web version is slow or won't start. What can I do?</summary>
+            <p>Use a current desktop browser with hardware acceleration turned on (the game is tested in Chrome), and keep the graphics level at Off or Low in Setup.
+              The first start downloads about 100&nbsp;MB, so give it a moment. If the screen stays black, check that WebGL&nbsp;2 is enabled.</p>
+          </details>
+          <details>
+            <summary>Does it work with a controller?</summary>
+            <p>Yes. Gamepads that SDL3 recognises work in the game, in the menus and in the editor. The <a href="#controls">controls section</a> lists the buttons.</p>
+          </details>
+          <details>
+            <summary>Can I play with friends?</summary>
+            <p>Yes. Since version 0.1.0, two to four players can play Speedy Blupi&nbsp;II's network game together on Windows,
+              Linux and Android, all in the same match. Join the same local network (or a virtual one such as ZeroTier for play over the
+              internet), choose <em>Multiplayer</em> in the main menu, and one player hosts while the others join. Everyone needs the
+              same version of the game. The web version can't play online. The
+              <a href="https://github.com/openeggbert/galaxy-eggbert/blob/develop/docs/handbook/09-multiplayer.md" rel="noopener">multiplayer guide</a>
+              explains every step.</p>
+          </details>
+          <details>
+            <summary>Can I share the worlds I build?</summary>
+            <p>Yes. Export a single world, or your whole galaxy, as one file and send it to a friend. They import it from the galaxy screen,
+              on the desktop or on the web. Recorded demos can be exported and imported the same way.</p>
+          </details>
+          <details>
+            <summary>How can I help?</summary>
+            <p>Play it, and <a href="https://github.com/openeggbert/galaxy-eggbert/issues" rel="noopener">report what feels wrong</a>,
+              especially where it plays differently from the Speedy Blupi you remember. Share your galaxies and demos, or send a pull request.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== COMMUNITY ============================== -->
+    <section class="section" id="community" aria-labelledby="community-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Part of OpenEggbert</p>
+          <h2 id="community-title">Join the Blupi family</h2>
+          <p class="lead">Galaxy Eggbert is one of several OpenEggbert projects that keep Blupi's games alive and playable.</p>
+        </div>
+        <div class="links-grid">
+          <a class="link-card" href="https://github.com/openeggbert/galaxy-eggbert" rel="noopener">
+            <b>Source code</b><span>The game on GitHub: star it, fork it, follow its progress.</span>
+          </a>
+          <a class="link-card" href="https://github.com/openeggbert/galaxy-eggbert/issues" rel="noopener">
+            <b>Report a bug</b><span>Found something odd? Tell us in the issue tracker.</span>
+          </a>
+          <a class="link-card" href="https://galaxyeggbert.openeggbert.com" rel="noopener">
+            <b>Developer docs</b><span>Architecture, game loop, rendering and the world format.</span>
+          </a>
+          <a class="link-card" href="https://openeggbert.com" rel="noopener">
+            <b>OpenEggbert</b><span>The community hub: an encyclopedia of every Blupi game.</span>
+          </a>
+          <a class="link-card" href="https://speedyblupi.com" rel="noopener">
+            <b>Play the originals</b><span>Speedy Blupi, Speedy Eggbert&nbsp;2 and Planet Blupi in your browser.</span>
+          </a>
+          <a class="link-card" href="https://github.com/openeggbert/mobile-eggbert" rel="noopener">
+            <b>Mobile Eggbert</b><span>The 2D C++ port of Speedy Blupi that this remake is based on.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== FINAL CTA ============================== -->
+    <section class="cta-band" aria-labelledby="cta-title">
+      <div class="wrap cta-inner">
+        <img class="cta-blupi" src="assets/img/blupi-cheer.webp" alt="" width="410" height="380" loading="lazy">
+        <div>
+          <h2 id="cta-title">Ready, Blupi?</h2>
+          <p>Seventy-eight worlds are waiting. Start in your browser in a few seconds, no install and no account.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary btn-lg" href="play/">Play Galaxy Eggbert</a>
+            <a class="btn btn-ghost btn-lg" href="https://github.com/openeggbert/galaxy-eggbert" rel="noopener">Star it on GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <a class="brand" href="#top">
+          <img src="assets/img/blupi-icon.png" alt="" width="32" height="32">
+          <span class="brand-name">Galaxy <b>Eggbert</b></span>
+        </a>
+        <p>A free, open-source 3D remake of Speedy Blupi.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="play/">Play online</a>
+        <a href="#download">Download</a>
+        <a href="#screenshots">Screenshots</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://github.com/openeggbert/galaxy-eggbert" rel="noopener">GitHub</a>
+        <a href="https://github.com/openeggbert/galaxy-eggbert/blob/develop/LICENSE" rel="noopener">License (GPL-3.0)</a>
+      </nav>
+      <p class="legal">
+        Galaxy Eggbert is an independent, non-commercial fan project. <em>Speedy Blupi</em>, <em>Speedy Eggbert</em> and
+        the character Blupi were created by Daniel Roux and EPSITEC&nbsp;SA. All rights to the original game belong to their owners.
+        Game code © the Galaxy Eggbert contributors, GPL-3.0. Fonts: Fredoka and Nunito (SIL Open Font License).
+      </p>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <dialog class="lightbox" id="lightbox" aria-label="Screenshot viewer">
+    <figure>
+      <img id="lightbox-img" src="data:," alt="">
+      <figcaption id="lightbox-cap"></figcaption>
+    </figure>
+    <button class="lb-btn lb-close" data-lb="close" aria-label="Close">✕</button>
+    <button class="lb-btn lb-prev" data-lb="prev" aria-label="Previous screenshot">‹</button>
+    <button class="lb-btn lb-next" data-lb="next" aria-label="Next screenshot">›</button>
+    <span class="lb-count" id="lightbox-count"></span>
+  </dialog>
+
+  <script src="assets/js/gallery-data.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
