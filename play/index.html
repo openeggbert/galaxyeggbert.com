@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Play Galaxy Eggbert online</title>
+  <meta name="description" content="Play Galaxy Eggbert, the 3D remake of Speedy Blupi, right in your browser. Free, no install, with progress saved in your browser.">
+  <meta name="theme-color" content="#070a1f">
+  <link rel="canonical" href="https://galaxyeggbert.com/play/">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" href="../assets/img/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Play Galaxy Eggbert online">
+  <meta property="og:description" content="The 3D remake of Speedy Blupi, playable in your browser. Free, no install.">
+  <meta property="og:url" content="https://galaxyeggbert.com/play/">
+  <meta property="og:image" content="https://galaxyeggbert.com/assets/img/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" href="../assets/fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    html, body { height: 100%; }
+    body { display: flex; flex-direction: column; overflow: hidden; }
+    .play-bar { position: relative; flex: 0 0 auto; }
+    .play-bar .header-inner { gap: 10px; }
+    .play-actions { display: flex; align-items: center; gap: 8px; }
+    .icon-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font: inherit; font-weight: 800; font-size: .93rem;
+      color: var(--text);
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--line-strong);
+      border-radius: 999px;
+      padding: 7px 14px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .icon-btn:hover { border-color: var(--yellow); color: var(--yellow); }
+    .icon-btn[aria-pressed="true"] { background: var(--yellow); color: var(--yellow-ink); border-color: var(--yellow); }
+    .icon-btn svg { width: 18px; height: 18px; flex: 0 0 auto; }
+    .stage { position: relative; flex: 1 1 auto; min-height: 0; background: #000; }
+    .stage iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; background: #000; }
+
+    .launcher { position: absolute; inset: 0; display: grid; place-items: center; overflow: auto; padding: 24px 16px; isolation: isolate; }
+    .launcher-bg { position: absolute; inset: 0; z-index: -1; }
+    .launcher-bg img { width: 100%; height: 100%; object-fit: cover; filter: saturate(1.1); }
+    .launcher-bg::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(7,10,31,.55), rgba(7,10,31,.92) 75%); }
+    .launch-card {
+      width: min(560px, 100%);
+      text-align: center;
+      padding: clamp(24px, 4vw, 40px);
+      border-radius: 26px;
+      background: rgba(11, 16, 48, .82);
+      border: 1px solid var(--line-strong);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    .launch-logo { margin: 0 auto .5em; }
+    .launch-logo img { width: min(440px, 100%); height: auto; margin: 0 auto; filter: drop-shadow(0 8px 18px rgba(0,0,0,.55)); }
+    .launch-card p { color: var(--muted); }
+    .launch-btn { font-size: 1.25rem; padding: .9em 1.8em; margin: 6px 0 18px; }
+    .launch-notes { list-style: none; padding: 0; margin: 0 auto; display: grid; gap: 6px; max-width: 420px; text-align: left; font-size: .93rem; color: var(--muted); }
+    .launch-notes li { display: flex; gap: 10px; }
+    .launch-notes li::before { content: "•"; color: var(--yellow); font-weight: 900; }
+    .launch-warn { display: none; margin: 16px 0 0; padding: 12px 14px; border-radius: 12px; background: rgba(255, 134, 192, .12); border: 1px solid rgba(255, 134, 192, .45); color: #ffd0e6; font-size: .93rem; text-align: left; }
+    .launch-warn.show { display: block; }
+
+    .help {
+      position: absolute; top: 12px; right: 12px; z-index: 5;
+      width: min(420px, calc(100% - 24px));
+      max-height: calc(100% - 24px);
+      overflow: auto;
+      padding: 18px 20px 14px;
+      border-radius: 18px;
+      background: rgba(9, 13, 38, .95);
+      border: 1px solid var(--line-strong);
+      box-shadow: var(--shadow);
+    }
+    .help h2 { font-size: 1.3rem; margin-bottom: .6em; }
+    .help .keys { grid-template-columns: 1fr; }
+    .help .keys > div { padding: 6px 0; font-size: .92rem; }
+    .help .fine { margin: 12px 0 0; }
+    .help-close { position: absolute; top: 10px; right: 10px; }
+
+    @media (max-width: 640px) {
+      .play-bar .brand-name { display: none; }
+      .icon-btn .lbl { display: none; }
+      .icon-btn { padding: 8px 10px; }
+    }
+    /* fullscreen: the stage fills the screen */
+    .stage:fullscreen { width: 100vw; height: 100vh; }
+    .stage:-webkit-full-screen { width: 100vw; height: 100vh; }
+  </style>
+</head>
+<body>
+  <header class="site-header play-bar">
+    <div class="wrap header-inner">
+      <a class="brand" href="../" aria-label="Galaxy Eggbert home">
+        <img src="../assets/img/blupi-icon.png" alt="" width="34" height="34">
+        <span class="brand-name">Galaxy <b>Eggbert</b></span>
+      </a>
+      <div class="play-actions">
+        <button class="icon-btn" id="btn-help" aria-pressed="false" aria-controls="help">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6.5 10h1M10.5 10h1M14.5 10h1M8 14h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span class="lbl">Controls</span>
+        </button>
+        <button class="icon-btn" id="btn-full" disabled>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="lbl">Full screen</span>
+        </button>
+        <a class="icon-btn" href="../#download">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14"/></svg>
+          <span class="lbl">Download</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="stage" id="stage">
+    <div class="launcher" id="launcher">
+      <div class="launcher-bg" aria-hidden="true"><img src="../assets/shots/hero.webp" alt=""></div>
+      <div class="launch-card">
+        <h1 class="launch-logo"><img src="../assets/img/logo.webp" srcset="../assets/img/logo.webp 1x, ../assets/img/logo@2x.webp 2x" alt="Galaxy Eggbert" width="490" height="90"></h1>
+        <p>The 3D remake of Speedy Blupi, running right here in your browser.</p>
+        <button class="btn btn-primary launch-btn" id="btn-start">
+          <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13a1 1 0 0 0 1.53.85l10.2-6.5a1 1 0 0 0 0-1.7L9.53 4.65A1 1 0 0 0 8 5.5z"/></svg>
+          Start the game
+        </button>
+        <ul class="launch-notes">
+          <li>The game downloads about 100&nbsp;MB when it starts.</li>
+          <li>Your progress, demos and worlds are saved in this browser.</li>
+          <li>A keyboard or gamepad is best. Touch screens get on-screen controls.</li>
+          <li>Press <kbd>F1</kbd> in the game for help, or <kbd>Esc</kbd> to pause.</li>
+        </ul>
+        <p class="launch-warn" id="warn-webgl">Your browser doesn't seem to support <strong>WebGL&nbsp;2</strong>, which the game needs.
+          Try a current Chrome, Edge or Firefox with hardware acceleration turned on, or <a href="../#download">download the game</a>.</p>
+        <p class="launch-warn" id="warn-mobile">You're on a phone or tablet. The web version is experimental there and needs a recent device with plenty of memory.</p>
+      </div>
+    </div>
+
+    <aside class="help" id="help" hidden aria-labelledby="help-title">
+      <button class="icon-btn help-close" id="btn-help-close" aria-label="Close controls">✕</button>
+      <h2 id="help-title">Controls</h2>
+      <dl class="keys">
+        <div><dt><kbd>W</kbd> / <kbd>↑</kbd></dt><dd>Walk forward</dd></div>
+        <div><dt><kbd>A</kbd> <kbd>D</kbd> / <kbd>←</kbd> <kbd>→</kbd></dt><dd>Turn</dd></div>
+        <div><dt><kbd>S</kbd> / <kbd>↓</kbd></dt><dd>Turn around</dd></div>
+        <div><dt><kbd>Left Ctrl</kbd></dt><dd>Jump</dd></div>
+        <div><dt><kbd>Space</kbd></dt><dd>Action · vehicles</dd></div>
+        <div><dt><kbd>F</kbd></dt><dd>Fire glue</dd></div>
+        <div><dt><kbd>Left Shift</kbd></dt><dd>Crouch · dive</dd></div>
+        <div><dt><kbd>X</kbd></dt><dd>Back up</dd></div>
+        <div><dt><kbd>Esc</kbd></dt><dd>Pause</dd></div>
+        <div><dt><kbd>F1</kbd></dt><dd>In-game help</dd></div>
+        <div><dt><kbd>F3</kbd></dt><dd>First / third person</dd></div>
+      </dl>
+      <p class="fine">Gamepad: stick to walk, <kbd>A</kbd> jump, <kbd>B</kbd> action, <kbd>Start</kbd> pause. Click into the game first so it gets the keyboard.</p>
+    </aside>
+  </main>
+
+  <script>
+  (function () {
+    "use strict";
+    // Where the WebAssembly build lives (copied in by tools/update-web-build.sh).
+    var GAME_URL = "game/GalaxyEggbert.html";
+
+    var stage = document.getElementById("stage");
+    var launcher = document.getElementById("launcher");
+    var btnStart = document.getElementById("btn-start");
+    var btnFull = document.getElementById("btn-full");
+    var btnHelp = document.getElementById("btn-help");
+    var help = document.getElementById("help");
+    var frame = null;
+
+    // Feature checks: WebGL 2 is required.
+    var hasWebGL2 = false;
+    try { hasWebGL2 = !!document.createElement("canvas").getContext("webgl2"); } catch (e) {}
+    if (!hasWebGL2) document.getElementById("warn-webgl").classList.add("show");
+    if (/android|iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.maxTouchPoints > 1 && /mac/i.test(navigator.platform))) {
+      document.getElementById("warn-mobile").classList.add("show");
+    }
+
+    function focusGame() {
+      if (!frame) return;
+      try { frame.contentWindow.focus(); } catch (e) {}
+      frame.focus();
+    }
+
+    function start() {
+      if (frame) return;
+      frame = document.createElement("iframe");
+      frame.src = GAME_URL;
+      frame.title = "Galaxy Eggbert";
+      frame.setAttribute("allow", "fullscreen; gamepad; autoplay; accelerometer; gyroscope");
+      frame.setAttribute("allowfullscreen", "");
+      frame.addEventListener("load", focusGame);
+      stage.appendChild(frame);
+      launcher.remove();
+      btnFull.disabled = false;
+      if (history.replaceState) history.replaceState(null, "", "#playing");
+      setTimeout(focusGame, 50);
+    }
+    btnStart.addEventListener("click", start);
+    // Allow deep links like /play/#start to skip the launcher (a click is still needed for audio).
+    if (location.hash === "#start") start();
+
+    btnFull.addEventListener("click", function () {
+      var el = stage;
+      var req = el.requestFullscreen || el.webkitRequestFullscreen;
+      if (document.fullscreenElement || document.webkitFullscreenElement) {
+        (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+      } else if (req) {
+        var p = req.call(el);
+        if (p && p.then) p.then(focusGame, function () {});
+        else focusGame();
+      }
+    });
+
+    function setHelp(open) {
+      help.hidden = !open;
+      btnHelp.setAttribute("aria-pressed", open ? "true" : "false");
+      if (!open) focusGame();
+    }
+    btnHelp.addEventListener("click", function () { setHelp(help.hidden); });
+    document.getElementById("btn-help-close").addEventListener("click", function () { setHelp(false); });
+
+    // Keep the page itself from scrolling when the game is focused at the edges.
+    window.addEventListener("keydown", function (e) {
+      if (frame && ["ArrowUp", "ArrowDown", " ", "PageUp", "PageDown"].indexOf(e.key) >= 0 && e.target === document.body) e.preventDefault();
+    });
+  })();
+  </script>
+</body>
+</html>
