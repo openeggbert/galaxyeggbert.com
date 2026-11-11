@@ -1,0 +1,4 @@
+# local scratch
+*.swp
+.DS_Store
+/node_modules/
