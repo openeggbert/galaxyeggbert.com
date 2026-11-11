@@ -1,0 +1,8 @@
+Fonts used by the website (self-hosted, Latin subset as served by Google Fonts):
+
+- Fredoka: SIL Open Font License, Version 1.1
+  https://fonts.google.com/specimen/Fredoka/license
+- Nunito: SIL Open Font License, Version 1.1
+  https://fonts.google.com/specimen/Nunito/license
+
+Full licence text: https://openfontlicense.org/open-font-license-official-text/
