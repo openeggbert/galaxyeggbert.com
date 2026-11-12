@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Galaxy Eggbert: Speedy Blupi reborn in 3D</title>
-  <meta name="description" content="Galaxy Eggbert is a free, open-source 3D remake of the classic platformer Speedy Blupi (Speedy Eggbert). It has 78 worlds, every original gadget, a built-in 3D world editor, and you can play it in your browser.">
+  <meta name="description" content="Galaxy Eggbert is a free, open-source 3D remake of the classic platformer Speedy Blupi (Speedy Eggbert). It has 78 worlds, twenty languages, every original gadget, a built-in 3D world editor, and you can play it in your browser.">
   <meta name="theme-color" content="#070a1f">
   <link rel="canonical" href="https://galaxyeggbert.com/">
   <link rel="icon" href="favicon.ico" sizes="any">
@@ -15,7 +15,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Galaxy Eggbert">
   <meta property="og:title" content="Galaxy Eggbert: Speedy Blupi reborn in 3D">
-  <meta property="og:description" content="A free, open-source 3D remake of Speedy Blupi with 78 worlds, every original gadget, a built-in 3D world editor and multiplayer for up to four players. Version 0.1.3 for Windows, Linux, Android and the web.">
+  <meta property="og:description" content="A free, open-source 3D remake of Speedy Blupi with 78 worlds, twenty languages, every original gadget, a built-in 3D world editor and multiplayer for up to four players. Version 0.4.0 for Windows, Linux, Android and the web.">
   <meta property="og:url" content="https://galaxyeggbert.com/">
   <meta property="og:image" content="https://galaxyeggbert.com/assets/img/og-image.jpg">
   <meta property="og:image:width" content="1200">
@@ -33,12 +33,12 @@
     "name": "Galaxy Eggbert",
     "url": "https://galaxyeggbert.com/",
     "image": "https://galaxyeggbert.com/assets/img/og-image.jpg",
-    "description": "A free, open-source 3D remake of the 1998 platformer Speedy Blupi (Speedy Eggbert).",
+    "description": "A free, open-source 3D remake of the 1998 platformer Speedy Blupi (Speedy Eggbert), in twenty languages.",
     "genre": ["Platformer", "3D platformer", "Puzzle"],
-    "softwareVersion": "0.1.3",
+    "softwareVersion": "0.4.0",
     "playMode": ["SinglePlayer", "MultiPlayer"],
     "numberOfPlayers": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 4 },
-    "downloadUrl": "https://github.com/openeggbert/galaxy-eggbert/releases/tag/v0.1.3",
+    "downloadUrl": "https://github.com/openeggbert/galaxy-eggbert/releases/tag/v0.4.0",
     "gamePlatform": ["Web browser", "Linux", "Windows", "Android"],
     "applicationCategory": "Game",
     "operatingSystem": "Linux, Windows, Android, Web",
@@ -89,7 +89,7 @@
       </div>
       <div class="wrap hero-inner">
         <p class="eyebrow hero-eyebrow">Free · Open source · Made by fans, for fans</p>
-        <p class="hero-news"><a href="#multiplayer"><span class="pill pill-ok">New</span> Version 0.1.3 is out: multiplayer for up to four players, nicknames and a 1.5× speed</a></p>
+        <p class="hero-news"><a href="#languages"><span class="pill pill-ok">New</span> Version 0.4.0 is out: twenty languages, a faster editor and clean text in full screen</a></p>
         <h1 class="hero-logo" id="hero-title">
           <img src="assets/img/logo.webp" srcset="assets/img/logo.webp 1x, assets/img/logo@2x.webp 2x" alt="Galaxy Eggbert" width="490" height="90">
         </h1>
@@ -109,7 +109,7 @@
             Download
           </a>
         </div>
-        <p class="hero-platforms">Version 0.1.3 for Windows, Linux, Android and the web · macOS and iPhone on the way</p>
+        <p class="hero-platforms">Version 0.4.0 for Windows, Linux, Android and the web · macOS and iPhone on the way</p>
       </div>
       <div class="wrap">
         <ul class="hero-stats" aria-label="The game in numbers">
@@ -188,7 +188,7 @@
           <li class="tl-now">
             <span class="tl-year">2026</span>
             <span class="tl-title">Galaxy Eggbert</span>
-            <span class="tl-text">The same game, rebuilt in 3D, with a campaign of 78 worlds, an editor for your own and Speedy Blupi&nbsp;II's network game. The first versions, 0.1.0 to 0.1.3, are released on 11&nbsp;November.</span>
+            <span class="tl-text">The same game, rebuilt in 3D, with a campaign of 78 worlds, an editor for your own and Speedy Blupi&nbsp;II's network game. The first versions, 0.1.0 to 0.1.3, are released on 11&nbsp;November. Version 0.4.0 follows on 12&nbsp;November: twenty languages, a faster editor and clean text in full screen.</span>
           </li>
         </ol>
       </div>
@@ -219,6 +219,7 @@
               <li>Free movement on every axis, with real heights to climb and fall from</li>
               <li>A chase camera that rises over walls behind Blupi, or first person with <kbd>F3</kbd></li>
               <li>Swim at the surface, dive with <kbd>Shift</kbd> and jump out onto the bank</li>
+              <li>No hitch when dynamite changes the terrain</li>
             </ul>
           </div>
         </div>
@@ -497,6 +498,7 @@
               <li>Neighbouring tiles fit themselves together as you place blocks</li>
               <li>Fill whole 3D regions, copy and paste, turn objects and set patrol routes</li>
               <li>Ten world slots per player, with Undo and Redo, automatic backups and a thumbnail for every saved world</li>
+              <li>Edits show at once, even in large worlds</li>
               <li>Play-test instantly, then go straight back to editing</li>
               <li>Works with mouse and keyboard, a gamepad, or touch alone</li>
             </ul>
@@ -525,7 +527,7 @@
     <section class="section section-alt" id="multiplayer" aria-labelledby="multiplayer-title">
       <div class="wrap">
         <div class="section-head">
-          <p class="eyebrow">New in 0.1.0</p>
+          <p class="eyebrow">Two to four players</p>
           <h2 id="multiplayer-title">Play together: Speedy Blupi&nbsp;II's network game</h2>
           <p class="lead">Two to four Blupis in one world. Galaxy Eggbert brings back the network game of
             Speedy Blupi&nbsp;II, with its rules, its arenas and its bombs, now in 3D.</p>
@@ -572,7 +574,7 @@
             <ul class="ticks">
               <li>Play on one local network: the same Wi-Fi or wired network</li>
               <li>Over the internet with a virtual LAN such as ZeroTier, or by the host's address</li>
-              <li>Everyone needs the same version of the game</li>
+              <li>Version 0.4.0 plays with 0.3.0, but not with 0.2.0 or 0.1.x</li>
               <li>Not in the web version: a browser can't find games on the network</li>
             </ul>
             <p class="fine">How to set it up, step by step: the
@@ -618,10 +620,10 @@
         <div class="section-head">
           <p class="eyebrow">Get the game</p>
           <h2 id="download-title">Download</h2>
-          <p class="lead">Galaxy Eggbert is free and always will be. <strong>Version 0.1.3</strong>, released on
-            11&nbsp;November 2026, is ready for Windows, Linux, Android and the web. Pick your platform below, or see
-            everything on <a href="https://github.com/openeggbert/galaxy-eggbert/releases/tag/v0.1.3" rel="noopener">GitHub Releases</a>
-            (with the <a href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v0.1.3/SHA256SUMS.txt" rel="noopener">checksums</a>).</p>
+          <p class="lead">Galaxy Eggbert is free and always will be. <strong>Version 0.4.0</strong>, released on
+            12&nbsp;November 2026, is ready for Windows, Linux, Android and the web. Pick your platform below, or see
+            everything on <a href="https://github.com/openeggbert/galaxy-eggbert/releases/tag/v0.4.0" rel="noopener">GitHub Releases</a>
+            (with the <a href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v0.4.0/SHA256SUMS.txt" rel="noopener">checksums</a>).</p>
         </div>
 
         <!--
@@ -640,7 +642,7 @@
             <p>Play instantly in a modern browser. WebAssembly + WebGL&nbsp;2, nothing to install.</p>
             <div class="dl-actions">
               <a class="btn btn-primary" href="play/">Play now</a>
-              <a class="btn btn-link" href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v0.1.3/GalaxyEggbert-0.1.3-web.zip" rel="noopener">Download to host it (83&nbsp;MB)</a>
+              <a class="btn btn-link" href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v0.4.0/GalaxyEggbert-0.4.0-web.zip" rel="noopener">Download to host it (80&nbsp;MB)</a>
             </div>
           </article>
 
@@ -649,11 +651,11 @@
               <svg viewBox="0 0 48 48"><rect x="5" y="8" width="38" height="32" rx="5" fill="none" stroke="currentColor" stroke-width="3"/><path d="m13 19 6 5-6 5M23 30h11" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <h3>Linux</h3>
-            <span class="pill pill-ok">Version 0.1.3</span>
+            <span class="pill pill-ok">Version 0.4.0</span>
             <p>A portable x86-64 bundle: extract it and run <code>./run-galaxy-eggbert</code>. It needs glibc&nbsp;2.38 or newer
               (Debian&nbsp;13, Ubuntu&nbsp;24.04 and later).</p>
             <div class="dl-actions">
-              <a class="btn btn-primary" href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v0.1.3/GalaxyEggbert-0.1.3-linux-x86_64.tar.gz" rel="noopener">Download .tar.gz (163&nbsp;MB)</a>
+              <a class="btn btn-primary" href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v0.4.0/GalaxyEggbert-0.4.0-linux-x86_64.tar.gz" rel="noopener">Download .tar.gz (156&nbsp;MB)</a>
               <a class="btn btn-link" href="#build-linux">Build it yourself</a>
             </div>
           </article>
@@ -663,11 +665,11 @@
               <svg viewBox="0 0 48 48"><path d="M6 10.5 21 8.4v14.1H6zM24 8l18-2.5v17H24zM6 25.5h15v14.1L6 37.5zM24 25.5h18v17L24 40z" fill="currentColor"/></svg>
             </div>
             <h3>Windows</h3>
-            <span class="pill pill-ok">Version 0.1.3</span>
+            <span class="pill pill-ok">Version 0.4.0</span>
             <p>64-bit Windows: extract the zip and start <code>GalaxyEggbert.exe</code>. It needs OpenGL&nbsp;3.3.
               This first Windows build has mostly been tested under Wine, so please report anything odd.</p>
             <div class="dl-actions">
-              <a class="btn btn-primary" href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v0.1.3/GalaxyEggbert-0.1.3-windows-x86_64.zip" rel="noopener">Download .zip (166&nbsp;MB)</a>
+              <a class="btn btn-primary" href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v0.4.0/GalaxyEggbert-0.4.0-windows-x86_64.zip" rel="noopener">Download .zip (160&nbsp;MB)</a>
               <a class="btn btn-link" href="https://github.com/openeggbert/galaxy-eggbert/issues" rel="noopener">Report a problem</a>
             </div>
           </article>
@@ -677,11 +679,11 @@
               <svg viewBox="0 0 48 48"><path d="M10 30a14 14 0 0 1 28 0z" fill="currentColor"/><path d="m15 15-3-5M33 15l3-5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="18" cy="23" r="2" fill="var(--bg)"/><circle cx="30" cy="23" r="2" fill="var(--bg)"/><rect x="10" y="32" width="28" height="9" rx="3" fill="currentColor" opacity=".55"/></svg>
             </div>
             <h3>Android</h3>
-            <span class="pill pill-ok">Version 0.1.3</span>
+            <span class="pill pill-ok">Version 0.4.0</span>
             <p>An APK for arm64 phones and tablets with Android&nbsp;7.0 or newer, with touch and tilt controls. Allow installing
               from your browser or file manager when Android asks.</p>
             <div class="dl-actions">
-              <a class="btn btn-primary" href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v0.1.3/GalaxyEggbert-0.1.3-android-arm64.apk" rel="noopener">Download .apk (123&nbsp;MB)</a>
+              <a class="btn btn-primary" href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v0.4.0/GalaxyEggbert-0.4.0-android-arm64.apk" rel="noopener">Download .apk (119&nbsp;MB)</a>
               <a class="btn btn-link" href="https://github.com/openeggbert/galaxy-eggbert/blob/develop/ANDROID.md" rel="noopener">Build the APK</a>
             </div>
           </article>
@@ -726,7 +728,7 @@ cd build &amp;&amp; ./GalaxyEggbert</code></pre>
           <details id="self-host">
             <summary>Host the web version yourself</summary>
             <p>The web build is a set of static files: <code>GalaxyEggbert.html</code>, <code>.js</code>, <code>.wasm</code>, <code>.data</code>
-              and the <code>Content/music</code> folder. <a href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v0.1.3/GalaxyEggbert-0.1.3-web.zip" rel="noopener">Download them as one zip</a>
+              and the <code>Content/music</code> folder. <a href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v0.4.0/GalaxyEggbert-0.4.0-web.zip" rel="noopener">Download them as one zip</a>
               and serve them over HTTP(S) from any web server. Opening the file from disk won't work.
               To build it yourself, use Emscripten:</p>
 <pre><code>emcmake cmake -S . -B build-cna-webgl2 -DGALAXY_EGGBERT_BUILD_CNA=ON \
@@ -883,6 +885,9 @@ cmake --build build-cna-webgl2 --target GalaxyEggbertCNA -j8</code></pre>
               <li>Multiplayer for 2 to 4 players: Speedy Blupi&nbsp;II's network game</li>
               <li>The first release, 0.1.0: Windows, Linux, Android and the web</li>
               <li>Nicknames for players A, B and C, and a 1.5× game speed (0.1.1–0.1.3)</li>
+              <li>Twenty languages, starting in your system's language, with a flag picker</li>
+              <li>A faster editor in large worlds, and no hitch when dynamite changes the terrain</li>
+              <li>Clean text in full screen</li>
             </ul>
           </div>
           <div class="road-col">
@@ -933,6 +938,13 @@ cmake --build build-cna-webgl2 --target GalaxyEggbertCNA -j8</code></pre>
               Speedy Blupi and Blupi were created by Daniel Roux and EPSITEC&nbsp;SA, and the rights to the original
               game belong to them.</p>
           </details>
+          <details id="languages">
+            <summary>Which languages can I play in?</summary>
+            <p>Twenty: English, French, German, Czech, Slovak, Spanish, Italian, Polish, Brazilian Portuguese, Dutch,
+              Hungarian, Romanian, Swedish, Russian, Ukrainian, Finnish, Danish, Norwegian, Turkish and Greek.</p>
+            <p>The game starts in your system's language. Click the flag in the main menu to open the panel of flags and choose
+              a language, or use <em>Language</em> in Setup. Your choice is remembered.</p>
+          </details>
           <details>
             <summary>Where are my saved games?</summary>
             <p>On Linux in <code>~/.local/share/Galaxy Eggbert</code> and on Windows in <code>%LOCALAPPDATA%\Galaxy Eggbert</code>.
@@ -950,10 +962,10 @@ cmake --build build-cna-webgl2 --target GalaxyEggbertCNA -j8</code></pre>
           </details>
           <details>
             <summary>Can I play with friends?</summary>
-            <p>Yes. Since version 0.1.0, two to four players can play Speedy Blupi&nbsp;II's network game together on Windows,
+            <p>Yes. Two to four players can play Speedy Blupi&nbsp;II's network game together on Windows,
               Linux and Android, all in the same match. Join the same local network (or a virtual one such as ZeroTier for play over the
-              internet), choose <em>Multiplayer</em> in the main menu, and one player hosts while the others join. Everyone needs the
-              same version of the game. The web version can't play online. The
+              internet), choose <em>Multiplayer</em> in the main menu, and one player hosts while the others join. Version 0.4.0 plays with 0.3.0,
+              but not with 0.2.0 or 0.1.x. The web version can't play online. The
               <a href="https://github.com/openeggbert/galaxy-eggbert/blob/develop/docs/handbook/09-multiplayer.md" rel="noopener">multiplayer guide</a>
               explains every step.</p>
           </details>
