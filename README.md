@@ -34,6 +34,30 @@ The web build must be served over HTTP; it doesn't run from `file://`.
 
 ## Common updates
 
+**A new final release.** The game's release CI updates this site's `main` branch automatically:
+current version/date, download URLs and real package sizes, network-compatible versions, and the
+web build in `play/game/`. The game repository's `GALAXYEGGBERT_COM_DEPLOY_KEY` Actions secret must
+hold a dedicated write-enabled deploy key for this repository. The push starts the legacy GitHub
+Pages build. Pre-releases do not update the site.
+
+Keep the `data-release` spans, `data-release-href` URL templates, `data-release-size` markers and
+`data-release-content` meta templates when editing. JSON-LD's exact `softwareVersion` and
+`downloadUrl` keys are maintained too. Timeline history is deliberately left alone. An optional
+`<!-- site-headline: … -->` comment in the game's dated changelog sets the hero news text;
+without it only the news version changes. Its anchor destination and other editorial text are
+still maintained here by hand.
+
+To rehearse or recover manually, from the game checkout:
+
+```bash
+python3 tools/release/update_sites.py --version 0.4.1 --date 2026-11-12 \
+  --packages build-probe/release/0.4.1 --site ../galaxyeggbert.com --web-dir web --dry-run
+```
+
+Review, repeat without `--dry-run`, then commit and push the changes if needed. The script itself
+never commits or builds; it uses the four release packages and calls `tools/update-web-build.sh`
+for the unpacked web zip. Full details are in the game's `docs/releasing.md`.
+
 **A new web build of the game.** Build the `WEBGL2` target in the game repository
 (see its README), then:
 
