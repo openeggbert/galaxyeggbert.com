@@ -15,7 +15,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Galaxy Eggbert">
   <meta property="og:title" content="Galaxy Eggbert: Speedy Blupi reborn in 3D">
-  <meta property="og:description" data-release-content="A free, open-source 3D remake of Speedy Blupi with 78 worlds, twenty languages, every original gadget, a built-in 3D world editor and multiplayer for up to four players. Version {version} for Windows, Linux, Android and the web." content="A free, open-source 3D remake of Speedy Blupi with 78 worlds, twenty languages, every original gadget, a built-in 3D world editor and multiplayer for up to four players. Version 0.4.1 for Windows, Linux, Android and the web.">
+  <meta property="og:description" data-release-content="A free, open-source 3D remake of Speedy Blupi with 78 worlds, twenty languages, every original gadget, a built-in 3D world editor and multiplayer for up to four players. Version {version} for Windows, Linux, Android and the web." content="A free, open-source 3D remake of Speedy Blupi with 78 worlds, twenty languages, every original gadget, a built-in 3D world editor and multiplayer for up to four players. Version 0.5.0 for Windows, Linux, Android and the web.">
   <meta property="og:url" content="https://galaxyeggbert.com/">
   <meta property="og:image" content="https://galaxyeggbert.com/assets/img/og-image.jpg">
   <meta property="og:image:width" content="1200">
@@ -35,10 +35,10 @@
     "image": "https://galaxyeggbert.com/assets/img/og-image.jpg",
     "description": "A free, open-source 3D remake of the 1998 platformer Speedy Blupi (Speedy Eggbert), in twenty languages.",
     "genre": ["Platformer", "3D platformer", "Puzzle"],
-    "softwareVersion": "0.4.1",
+    "softwareVersion": "0.5.0",
     "playMode": ["SinglePlayer", "MultiPlayer"],
     "numberOfPlayers": { "@type": "QuantitativeValue", "minValue": 1, "maxValue": 4 },
-    "downloadUrl": "https://github.com/openeggbert/galaxy-eggbert/releases/tag/v0.4.1",
+    "downloadUrl": "https://github.com/openeggbert/galaxy-eggbert/releases/tag/v0.5.0",
     "gamePlatform": ["Web browser", "Linux", "Windows", "Android"],
     "applicationCategory": "Game",
     "operatingSystem": "Linux, Windows, Android, Web",
@@ -89,7 +89,7 @@
       </div>
       <div class="wrap hero-inner">
         <p class="eyebrow hero-eyebrow">Free · Open source · Made by fans, for fans</p>
-        <p class="hero-news"><a href="#languages"><span class="pill pill-ok">New</span> <span data-release="headline">Version 0.4.1 is out: twenty languages, a faster editor and clean text in full screen</span></a></p>
+        <p class="hero-news"><a data-release-href="https://github.com/openeggbert/galaxy-eggbert/releases/tag/v{version}" href="https://github.com/openeggbert/galaxy-eggbert/releases/tag/v0.5.0" rel="noopener"><span class="pill pill-ok">New</span> <span data-release="headline">Version 0.5.0 is out: twenty-one new cheats, a cheat keyboard and your own demo recordings</span></a></p>
         <h1 class="hero-logo" id="hero-title">
           <img src="assets/img/logo.webp" srcset="assets/img/logo.webp 1x, assets/img/logo@2x.webp 2x" alt="Galaxy Eggbert" width="490" height="90">
         </h1>
@@ -109,7 +109,7 @@
             Download
           </a>
         </div>
-        <p class="hero-platforms">Version <span data-release="version">0.4.1</span> for Windows, Linux, Android and the web · macOS and iPhone on the way</p>
+        <p class="hero-platforms">Version <span data-release="version">0.5.0</span> for Windows, Linux, Android and the web · macOS and iPhone on the way</p>
       </div>
       <div class="wrap">
         <ul class="hero-stats" aria-label="The game in numbers">
@@ -341,13 +341,17 @@
           <article class="mini">
             <h3><span class="mini-icon" aria-hidden="true">🎬</span> Demos, like the original</h3>
             <p>Leave the main menu alone and Blupi starts playing ten demo runs. Record your own run of any
-              mission from the pause menu, then export it and share it as a file.</p>
+              mission from the pause menu, keep it in My recordings, then export it and share it as a file.</p>
           </article>
           <article class="mini">
-            <h3><span class="mini-icon" aria-hidden="true">🪄</span> Classic cheats</h3>
+            <h3><span class="mini-icon" aria-hidden="true">🪄</span> Classic cheats, and new ones</h3>
             <p>Type the old cheat words, or open the cheat menu with <kbd>F12</kbd>.
-              <code>xnjttjpo</code> still opens the editor on the world you're playing. Type
-              <code>fairplay</code> to lock cheats for an honest run.</p>
+              <code>xnjttjpo</code> still opens the editor on the world you're playing. Galaxy adds its own:
+              <code>back</code> rewinds five seconds, <code>replay</code> shows the last ten again,
+              <code>freecam</code> flies the camera, <code>warp</code> goes to any world, <code>xray</code> shows
+              what is hidden; type <code>help</code> for all of them. On a phone or a gamepad, hold the middle of
+              the screen or <kbd>LT</kbd> for a second for a cheat keyboard. Type <code>fairplay</code> to lock
+              cheats for an honest run.</p>
           </article>
           <article class="mini">
             <h3><span class="mini-icon" aria-hidden="true">💾</span> Saves that stay put</h3>
@@ -574,7 +578,7 @@
             <ul class="ticks">
               <li>Play on one local network: the same Wi-Fi or wired network</li>
               <li>Over the internet with a virtual LAN such as ZeroTier, or by the host's address</li>
-              <li><span data-release="network">Version 0.4.1 plays with 0.4.0 and 0.3.0, but not with 0.2.0 or 0.1.x</span></li>
+              <li><span data-release="network">Version 0.5.0 plays with 0.4.1, 0.4.0 and 0.3.0, but not with 0.2.0 or 0.1.x</span></li>
               <li>Not in the web version: a browser can't find games on the network</li>
             </ul>
             <p class="fine">How to set it up, step by step: the
@@ -620,10 +624,10 @@
         <div class="section-head">
           <p class="eyebrow">Get the game</p>
           <h2 id="download-title">Download</h2>
-          <p class="lead">Galaxy Eggbert is free and always will be. <strong>Version <span data-release="version">0.4.1</span></strong>, released on
-            <span data-release="date-long">12&nbsp;November 2026</span>, is ready for Windows, Linux, Android and the web. Pick your platform below, or see
-            everything on <a data-release-href="https://github.com/openeggbert/galaxy-eggbert/releases/tag/v{version}" href="https://github.com/openeggbert/galaxy-eggbert/releases/tag/v0.4.1" rel="noopener">GitHub Releases</a>
-            (with the <a data-release-href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v{version}/SHA256SUMS.txt" href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v0.4.1/SHA256SUMS.txt" rel="noopener">checksums</a>).</p>
+          <p class="lead">Galaxy Eggbert is free and always will be. <strong>Version <span data-release="version">0.5.0</span></strong>, released on
+            <span data-release="date-long">14&nbsp;November 2026</span>, is ready for Windows, Linux, Android and the web. Pick your platform below, or see
+            everything on <a data-release-href="https://github.com/openeggbert/galaxy-eggbert/releases/tag/v{version}" href="https://github.com/openeggbert/galaxy-eggbert/releases/tag/v0.5.0" rel="noopener">GitHub Releases</a>
+            (with the <a data-release-href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v{version}/SHA256SUMS.txt" href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v0.5.0/SHA256SUMS.txt" rel="noopener">checksums</a>).</p>
         </div>
 
         <!--
@@ -642,7 +646,7 @@
             <p>Play instantly in a modern browser. WebAssembly + WebGL&nbsp;2, nothing to install.</p>
             <div class="dl-actions">
               <a class="btn btn-primary" href="play/">Play now</a>
-              <a class="btn btn-link" data-release-href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v{version}/GalaxyEggbert-{version}-web.zip" href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v0.4.1/GalaxyEggbert-0.4.1-web.zip" rel="noopener"><span>Download to host it (<span data-release-size="web">80&nbsp;MB</span>)</span></a>
+              <a class="btn btn-link" data-release-href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v{version}/GalaxyEggbert-{version}-web.zip" href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v0.5.0/GalaxyEggbert-0.5.0-web.zip" rel="noopener"><span>Download to host it (<span data-release-size="web">80&nbsp;MB</span>)</span></a>
             </div>
           </article>
 
@@ -651,11 +655,11 @@
               <svg viewBox="0 0 48 48"><rect x="5" y="8" width="38" height="32" rx="5" fill="none" stroke="currentColor" stroke-width="3"/><path d="m13 19 6 5-6 5M23 30h11" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
             <h3>Linux</h3>
-            <span class="pill pill-ok">Version <span data-release="version">0.4.1</span></span>
+            <span class="pill pill-ok">Version <span data-release="version">0.5.0</span></span>
             <p>A portable x86-64 bundle: extract it and run <code>./run-galaxy-eggbert</code>. It needs glibc&nbsp;2.38 or newer
               (Debian&nbsp;13, Ubuntu&nbsp;24.04 and later).</p>
             <div class="dl-actions">
-              <a class="btn btn-primary" data-release-href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v{version}/GalaxyEggbert-{version}-linux-x86_64.tar.gz" href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v0.4.1/GalaxyEggbert-0.4.1-linux-x86_64.tar.gz" rel="noopener"><span>Download .tar.gz (<span data-release-size="linux">156&nbsp;MB</span>)</span></a>
+              <a class="btn btn-primary" data-release-href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v{version}/GalaxyEggbert-{version}-linux-x86_64.tar.gz" href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v0.5.0/GalaxyEggbert-0.5.0-linux-x86_64.tar.gz" rel="noopener"><span>Download .tar.gz (<span data-release-size="linux">157&nbsp;MB</span>)</span></a>
               <a class="btn btn-link" href="#build-linux">Build it yourself</a>
             </div>
           </article>
@@ -665,11 +669,11 @@
               <svg viewBox="0 0 48 48"><path d="M6 10.5 21 8.4v14.1H6zM24 8l18-2.5v17H24zM6 25.5h15v14.1L6 37.5zM24 25.5h18v17L24 40z" fill="currentColor"/></svg>
             </div>
             <h3>Windows</h3>
-            <span class="pill pill-ok">Version <span data-release="version">0.4.1</span></span>
+            <span class="pill pill-ok">Version <span data-release="version">0.5.0</span></span>
             <p>64-bit Windows: extract the zip and start <code>GalaxyEggbert.exe</code>. It needs OpenGL&nbsp;3.3.
               This first Windows build has mostly been tested under Wine, so please report anything odd.</p>
             <div class="dl-actions">
-              <a class="btn btn-primary" data-release-href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v{version}/GalaxyEggbert-{version}-windows-x86_64.zip" href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v0.4.1/GalaxyEggbert-0.4.1-windows-x86_64.zip" rel="noopener"><span>Download .zip (<span data-release-size="windows">160&nbsp;MB</span>)</span></a>
+              <a class="btn btn-primary" data-release-href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v{version}/GalaxyEggbert-{version}-windows-x86_64.zip" href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v0.5.0/GalaxyEggbert-0.5.0-windows-x86_64.zip" rel="noopener"><span>Download .zip (<span data-release-size="windows">160&nbsp;MB</span>)</span></a>
               <a class="btn btn-link" href="https://github.com/openeggbert/galaxy-eggbert/issues" rel="noopener">Report a problem</a>
             </div>
           </article>
@@ -679,11 +683,11 @@
               <svg viewBox="0 0 48 48"><path d="M10 30a14 14 0 0 1 28 0z" fill="currentColor"/><path d="m15 15-3-5M33 15l3-5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><circle cx="18" cy="23" r="2" fill="var(--bg)"/><circle cx="30" cy="23" r="2" fill="var(--bg)"/><rect x="10" y="32" width="28" height="9" rx="3" fill="currentColor" opacity=".55"/></svg>
             </div>
             <h3>Android</h3>
-            <span class="pill pill-ok">Version <span data-release="version">0.4.1</span></span>
+            <span class="pill pill-ok">Version <span data-release="version">0.5.0</span></span>
             <p>An APK for arm64 phones and tablets with Android&nbsp;7.0 or newer, with touch and tilt controls. Allow installing
               from your browser or file manager when Android asks.</p>
             <div class="dl-actions">
-              <a class="btn btn-primary" data-release-href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v{version}/GalaxyEggbert-{version}-android-arm64.apk" href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v0.4.1/GalaxyEggbert-0.4.1-android-arm64.apk" rel="noopener"><span>Download .apk (<span data-release-size="android">119&nbsp;MB</span>)</span></a>
+              <a class="btn btn-primary" data-release-href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v{version}/GalaxyEggbert-{version}-android-arm64.apk" href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v0.5.0/GalaxyEggbert-0.5.0-android-arm64.apk" rel="noopener"><span>Download .apk (<span data-release-size="android">119&nbsp;MB</span>)</span></a>
               <a class="btn btn-link" href="https://github.com/openeggbert/galaxy-eggbert/blob/develop/ANDROID.md" rel="noopener">Build the APK</a>
             </div>
           </article>
@@ -728,7 +732,7 @@ cd build &amp;&amp; ./GalaxyEggbert</code></pre>
           <details id="self-host">
             <summary>Host the web version yourself</summary>
             <p>The web build is a set of static files: <code>GalaxyEggbert.html</code>, <code>.js</code>, <code>.wasm</code>, <code>.data</code>
-              and the <code>Content/music</code> folder. <a data-release-href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v{version}/GalaxyEggbert-{version}-web.zip" href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v0.4.1/GalaxyEggbert-0.4.1-web.zip" rel="noopener">Download them as one zip</a>
+              and the <code>Content/music</code> folder. <a data-release-href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v{version}/GalaxyEggbert-{version}-web.zip" href="https://github.com/openeggbert/galaxy-eggbert/releases/download/v0.5.0/GalaxyEggbert-0.5.0-web.zip" rel="noopener">Download them as one zip</a>
               and serve them over HTTP(S) from any web server. Opening the file from disk won't work.
               To build it yourself, use Emscripten:</p>
 <pre><code>emcmake cmake -S . -B build-cna-webgl2 -DGALAXY_EGGBERT_BUILD_CNA=ON \
@@ -795,6 +799,7 @@ cmake --build build-cna-webgl2 --target GalaxyEggbertCNA -j8</code></pre>
               <div><dt><kbd>LB</kbd> + <kbd>Down</kbd></dt><dd>Pull a crate</dd></div>
               <div><dt><kbd>Y</kbd></dt><dd>Look up</dd></div>
               <div><dt><kbd>Start</kbd> / <kbd>Back</kbd></dt><dd>Pause · continue</dd></div>
+              <div><dt><kbd>LT</kbd> (hold 1&nbsp;s)</dt><dd>Cheat keyboard</dd></div>
             </dl>
           </div>
 
@@ -805,6 +810,7 @@ cmake --build build-cna-webgl2 --target GalaxyEggbertCNA -j8</code></pre>
               <div><dt>Fire</dt><dd>Hold to fire glue from the tank or helicopter</dd></div>
               <div><dt>Back-up button</dt><dd>Sits above the stick</dd></div>
               <div><dt>Tilt (Android)</dt><dd>Steer with the accelerometer, if you turn it on in Setup</dd></div>
+              <div><dt>Hold the middle (1&nbsp;s)</dt><dd>Cheat keyboard, to type cheats without a keyboard</dd></div>
               <div><dt>Mouse drag</dt><dd>Hold the left button and drag to look around. Walking re-centres the camera</dd></div>
             </dl>
           </div>
@@ -964,8 +970,7 @@ cmake --build build-cna-webgl2 --target GalaxyEggbertCNA -j8</code></pre>
             <summary>Can I play with friends?</summary>
             <p>Yes. Two to four players can play Speedy Blupi&nbsp;II's network game together on Windows,
               Linux and Android, all in the same match. Join the same local network (or a virtual one such as ZeroTier for play over the
-              internet), choose <em>Multiplayer</em> in the main menu, and one player hosts while the others join. <span data-release="network">Version 0.4.1 plays with 0.4.0 and 0.3.0,
-              but not with 0.2.0 or 0.1.x</span>. The web version can't play online. The
+              internet), choose <em>Multiplayer</em> in the main menu, and one player hosts while the others join. <span data-release="network">Version 0.5.0 plays with 0.4.1, 0.4.0 and 0.3.0, but not with 0.2.0 or 0.1.x</span>. The web version can't play online. The
               <a href="https://github.com/openeggbert/galaxy-eggbert/blob/develop/docs/handbook/09-multiplayer.md" rel="noopener">multiplayer guide</a>
               explains every step.</p>
           </details>
